@@ -1,7 +1,9 @@
 extends RigidBody3D
 class_name MovableObject
 
-const MIN_THROW_FORCE = 3.5;
+@onready var launch_sound_player: AudioStreamPlayer3D = $LaunchSoundPlayer
+
+const MIN_THROW_FORCE = 4;
 var life = 500;
 
 func lockToPosition(newPosition):	
@@ -12,6 +14,7 @@ func disableGravity():
 	gravity_scale = 0;
 
 func launch(force, power):
+	launch_sound_player.play();
 	var currentForce = max(power, 0);
 	apply_central_impulse(force * currentForce * MIN_THROW_FORCE);
 	gravity_scale = 1;
@@ -19,9 +22,6 @@ func launch(force, power):
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Enemy"):
 		body.manage_hit(abs(linear_velocity.length()), 50);
-	life -= linear_velocity.length();
-	if life < 0:
-		queue_free();
 		
 func get_shader() -> Shader:
 	return null;

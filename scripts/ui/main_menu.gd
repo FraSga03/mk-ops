@@ -44,7 +44,7 @@ func update_labels():
 	exit_button.text = tr("exit");
 
 func _on_play_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/ui/levels_menu.tscn");	
+	get_tree().get_root().add_child(levels.instantiate());
 
 func _on_commands_button_pressed() -> void:
 	get_tree().get_root().add_child(options.instantiate());

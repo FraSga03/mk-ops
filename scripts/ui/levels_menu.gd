@@ -7,8 +7,7 @@ extends Control
 @onready var title_label: Label = $VBoxContainer/MainVerticalBox/TitleLabel
 
 func _on_exit_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn");	
-
+	queue_free();
 
 func _ready() -> void:
 	var level_one_record = Globals.load_time("level_1");
@@ -27,7 +26,7 @@ func _ready() -> void:
 	title_label.text = tr("select_level");
 	
 func _on_play_level_1() -> void:
-	Transition.change_scene("res://scenes/ui/intro.tscn");
+	Transition.change_scene("res://scenes/ui/intro.tscn", queue_free);
 	
 func _on_play_level_2() -> void:
 	Transition.change_scene("res://scenes/levels/level_2.tscn");

@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtufecsq0clpx"]
+[gd_scene load_steps=14 format=3 uid="uid://dtufecsq0clpx"]
 
 [ext_resource type="Script" uid="uid://dqe5gs0i1wxog" path="res://scripts/enemies/enemy.gd" id="1_6xk8f"]
 [ext_resource type="PackedScene" uid="uid://d34ymsmbahx60" path="res://scenes/enemies/enemy_body.tscn" id="2_8e3ao"]
 [ext_resource type="AudioStream" uid="uid://diks3k0yon84d" path="res://assets/musics/stepfoot.mp3" id="3_38ino"]
+[ext_resource type="AudioStream" uid="uid://ckv825jly6f2g" path="res://assets/musics/enemy_hit.mp3" id="4_fcftc"]
 
 [sub_resource type="Animation" id="Animation_38ino"]
 length = 0.001
@@ -17,7 +18,7 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8e3ao"]
-radius = 0.221381
+radius = 0.505342
 height = 2.01715
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8e3ao"]
@@ -70,7 +71,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 polygon = PackedVector2Array(6, -12, -6, -12, -6.004, -12, -6, -2, 0, 0, 0, 0, 6, -2)
 
 [node name="PlayerPointer" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.45, 0, 2.61122, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.45, 0, 1.95329, 0)
 target_position = Vector3(0, 0, -8)
 collision_mask = 7
 collide_with_areas = true
@@ -148,6 +149,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, -2)
 
 [node name="ExclamationMark" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2781, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_fcftc")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="ExclamationMark"]
@@ -164,7 +166,7 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea"]
 shape = SubResource("CylinderShape3D_8e3ao")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="StepAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_38ino")
 volume_db = -35.0
 pitch_scale = 2.0
@@ -173,6 +175,12 @@ max_distance = 8.0
 [node name="DetectionTimer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
+
+[node name="HitSoundPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_fcftc")
+volume_db = -35.0
+pitch_scale = 2.0
+max_distance = 8.0
 
 [connection signal="body_entered" from="GameOverArea" to="." method="_on_game_over_area_body_entered"]
 [connection signal="body_exited" from="GameOverArea" to="." method="_on_game_over_area_body_exited"]

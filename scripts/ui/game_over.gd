@@ -7,8 +7,9 @@ extends Control
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE;
-	animation_player_bg.play("change_bg");
 	animation_player_show_content.play("show_content");
+	
+	animation_player_bg.play("change_bg");
 	
 	resume_button.text = tr("next");
 	exit_button.text = tr("exit");

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ku16cxy8qd7l"]
+[gd_scene load_steps=3 format=3 uid="uid://ku16cxy8qd7l"]
 
 [ext_resource type="Script" uid="uid://c2rmx22icgthj" path="res://scripts/movable_objects/movable_obj.gd" id="1_b4vy4"]
+[ext_resource type="AudioStream" uid="uid://m8kkmal5wfpl" path="res://assets/musics/launch_obj.mp3" id="2_v8frf"]
 
 [node name="MovableObject" type="RigidBody3D"]
 collision_layer = 8
@@ -10,5 +11,8 @@ max_contacts_reported = 5
 script = ExtResource("1_b4vy4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="LaunchSoundPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_v8frf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

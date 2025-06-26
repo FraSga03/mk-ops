@@ -3,6 +3,7 @@ extends Control
 @onready var skip_button: Button = $MarginContainer/BoxContainer/SkipButton
 @onready var go_on_button: Button = $MarginContainer/BoxContainer/GoOnButton
 @onready var script_label: RichTextLabel = $MarginContainer2/ScriptLabel
+@onready var typing_sound_player: AudioStreamPlayer = $TypingSoundPlayer
 
 var to_read_chars = [];
 var current_index = 0;
@@ -27,6 +28,12 @@ func _physics_process(delta: float) -> void:
 	await get_tree().create_timer(delta * SPEED).timeout;
 	if len(to_read_chars) > 0:
 		script_label.append_text(to_read_chars.pop_at(0));
+		
+		if !typing_sound_player.playing:
+			typing_sound_player.play();
+	else:
+		typing_sound_player.stop();
+		
 
 func set_to_read_char(curr_index):
 	to_read_chars = Array(intro_dialogues[curr_index].split(""));

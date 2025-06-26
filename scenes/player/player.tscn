@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dofxq83b8pvi1"]
+[gd_scene load_steps=13 format=3 uid="uid://dofxq83b8pvi1"]
 
 [ext_resource type="Script" uid="uid://buxqn7r4sxkrq" path="res://scripts/player/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://bdax8lsrvb64e" path="res://scenes/player/protagonist_model.tscn" id="2_g2els"]
 [ext_resource type="AudioStream" uid="uid://diks3k0yon84d" path="res://assets/musics/stepfoot.mp3" id="3_gmlin"]
+[ext_resource type="AudioStream" uid="uid://dk76bs6ckyh60" path="res://assets/musics/scan.mp3" id="4_lvxji"]
+[ext_resource type="AudioStream" uid="uid://dqsn1qo4an60s" path="res://assets/musics/energy.mp3" id="5_p47bc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qhqgy"]
 radius = 0.22
@@ -61,6 +63,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ScanAudioPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_g2els"]
 resource_name = "expand_sphere"
@@ -100,6 +114,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ScanAudioPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0.812253),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qhqgy"]
@@ -168,11 +194,21 @@ libraries = {
 &"": SubResource("AnimationLibrary_qhqgy")
 }
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="StepAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_gmlin")
 volume_db = -35.0
 pitch_scale = 2.0
 max_distance = 10.0
+
+[node name="ScanAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_lvxji")
+volume_db = -10.0
+pitch_scale = 2.0
+max_distance = 10.0
+
+[node name="EnergyAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_p47bc")
+volume_db = -20.0
 
 [connection signal="timeout" from="SprintTimer" to="." method="_on_sprint_timer_timeout"]
 [connection signal="body_entered" from="DomainSphere" to="." method="_on_domain_sphere_body_entered"]

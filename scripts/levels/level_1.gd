@@ -77,7 +77,7 @@ var dialogues = {
 }
 
 func _init():
-	super._init("Livello 1", dialogues);
+	super._init(tr("level_1"), dialogues);
 	Globals.current_play_scene = "res://scenes/levels/level_1.tscn"
 
 func set_enemy_path():
@@ -124,7 +124,7 @@ func after_ready():
 	
 func _on_scene_ready() -> void:
 	dialogue_key = "init";
-	#open_radio();
+	open_radio();
 
 func _on_area_f1a_entered(_body: Node3D) -> void:
 	dialogue_key = "floor_1_a";

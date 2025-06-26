@@ -39,15 +39,12 @@ func _game_over(e):
 	tween.parallel().tween_property(player.camera_pivot, "global_position", e.camera_pivot.global_position, 0.5);
 	tween.parallel().tween_property(player.camera_pivot, "global_rotation", e.camera_pivot.global_rotation, 0.5);
 	
-	await get_tree().create_timer(1).timeout;
+	await get_tree().create_timer(2).timeout;
 	Transition.change_scene("res://scenes/ui/game_over.tscn")
 
 
 func _ready() -> void:
-	print(get_tree().current_scene.get_path())
-
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
-
 	Globals.on_resume.connect(resume_game);
 	
 	set_enemy_path();

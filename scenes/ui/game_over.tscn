@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnr86rj21i7xv"]
+[gd_scene load_steps=12 format=3 uid="uid://cnr86rj21i7xv"]
 
 [ext_resource type="FontFile" uid="uid://c5bjrlrg78x6n" path="res://assets/fonts/Michroma-Regular.ttf" id="1_fu4wh"]
 [ext_resource type="Script" uid="uid://c0fsd1wdxu25k" path="res://scripts/ui/game_over.gd" id="2_fu4wh"]
+[ext_resource type="AudioStream" uid="uid://c0brpolnfrsgd" path="res://assets/musics/game_over.mp3" id="3_x6o8e"]
 
 [sub_resource type="Theme" id="Theme_7vrkn"]
 default_font = ExtResource("1_fu4wh")
@@ -158,7 +159,7 @@ _data = {
 &"show_content": SubResource("Animation_x6o8e")
 }
 
-[node name="Control" type="Control"]
+[node name="GameOver" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -238,6 +239,11 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 22
 text = "ESCI
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_x6o8e")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

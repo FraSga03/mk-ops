@@ -26,7 +26,7 @@ func _ready() -> void:
 	release_label.label.text = tr("release");
 	scan_label.label.text = tr("scan");
 	radio_label.label.text = tr("radio");
-	pause_label.label.text = tr("pause");
+	pause_label.label.text = tr("pause_c");
 	
 	exit_button.text = tr("exit");
 

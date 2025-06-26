@@ -8,12 +8,12 @@ extends CharacterBody3D
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
 @onready var detection_timer: Timer = $DetectionTimer
+@onready var hit_sound_player: AudioStreamPlayer3D = $HitSoundPlayer
 
 signal on_enemy_death;
 signal on_player_detect;
 
 var tween = null;
-var life_points = 500;
 
 var detected_player = null;
 var is_inspecting = false;
@@ -42,31 +42,25 @@ func _physics_process(delta: float) -> void:
 				is_player_detected = true;
 				on_detect_player();
 
-func decrement_life(delta):
-	life_points -= delta;
-	if life_points <= 0:
-		on_enemy_death.emit();
-		queue_free();
-
 func on_detect_player():
 	show_exlamation_mark();
 	enemy_body.aiming();
 	look_at(detected_player.global_position);
 	on_player_detect.emit();
 
-func manage_hit(force, delta):
-	if force < 10:
+func manage_hit(force, delta):	
+	if !stun_timer.is_stopped():
 		return;
+		
+	hit_sound_player.play();
+	is_stunned = true;
+	stun_timer.start();
+	enemy_body.idle();
+	stun_animation(true);
 	
-	if stun_timer.is_stopped():
-		is_stunned = true;
-		stun_timer.start();
-		enemy_body.idle();
-		stun_animation(true);
-		decrement_life(delta);
-		if tween != null:
-			tween.stop();
-			tween = null;
+	if tween != null:
+		tween.stop();
+		tween = null;
 
 func stun_animation(val):
 	particles.visible = true;

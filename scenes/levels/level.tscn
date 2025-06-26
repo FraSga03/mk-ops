@@ -39,4 +39,5 @@ shadow_enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_xb4v1")
+volume_db = -15.0
 autoplay = true

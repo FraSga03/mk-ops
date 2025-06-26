@@ -11,7 +11,7 @@ var checkpoints: Array = [
 ];
 var current_progress = 0;
 var tween;
-@export var SPEED = 5;
+@export var SPEED = 4;
 
 func _physics_process(delta: float) -> void:
 	if enemy.is_enemy_stopped():

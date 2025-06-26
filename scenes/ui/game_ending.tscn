@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dld8s8f3v0tv"]
+[gd_scene load_steps=12 format=3 uid="uid://dld8s8f3v0tv"]
 
 [ext_resource type="FontFile" uid="uid://c5bjrlrg78x6n" path="res://assets/fonts/Michroma-Regular.ttf" id="1_atgft"]
 [ext_resource type="Script" uid="uid://b1dly441ib8qr" path="res://scripts/ui/game_ending.gd" id="2_atgft"]
+[ext_resource type="AudioStream" uid="uid://bn12y2es0nuvo" path="res://assets/musics/level_completed.mp3" id="3_tm6cn"]
 
 [sub_resource type="Theme" id="Theme_7vrkn"]
 default_font = ExtResource("1_atgft")
@@ -231,5 +232,10 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 22
 text = "ESCI
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tm6cn")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_commands_button_pressed"]

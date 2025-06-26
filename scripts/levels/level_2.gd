@@ -52,7 +52,7 @@ var dialogues = {
 }
 
 func _init():
-	super._init("Livello 2", dialogues)
+	super._init(tr("level_2"), dialogues)
 	
 func _on_immovable_exit_door_on_door_entered() -> void:
 	if get_bodies_in_control_area().size() != 3:
