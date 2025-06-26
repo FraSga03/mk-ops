@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ku16cxy8qd7l"]
+
+[ext_resource type="Script" uid="uid://c2rmx22icgthj" path="res://scripts/movable_objects/movable_obj.gd" id="1_b4vy4"]
+
+[node name="MovableObject" type="RigidBody3D"]
+collision_layer = 8
+collision_mask = 31
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_b4vy4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

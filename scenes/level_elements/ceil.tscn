@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvheukowq26l5"]
+
+[ext_resource type="Texture2D" uid="uid://cygt7fbud2k54" path="res://assets/textures/Light/texture_12.png" id="1_dh0ml"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_047gd"]
+albedo_color = Color(0.31802, 0.31802, 0.31802, 1)
+albedo_texture = ExtResource("1_dh0ml")
+uv1_triplanar = true
+
+[node name="Ceil" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+material_override = SubResource("StandardMaterial3D_047gd")
+use_collision = true
+collision_mask = 15
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(50, 0.5, 50)

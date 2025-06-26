@@ -1,0 +1,170 @@
+[gd_scene load_steps=12 format=3 uid="uid://dtufecsq0clpx"]
+
+[ext_resource type="Script" uid="uid://dqe5gs0i1wxog" path="res://scripts/enemies/enemy.gd" id="1_6xk8f"]
+[ext_resource type="PackedScene" uid="uid://d34ymsmbahx60" path="res://scenes/enemies/enemy_body.tscn" id="2_8e3ao"]
+
+[sub_resource type="Animation" id="Animation_38ino"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_8e3ao"]
+resource_name = "show_mark"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fcftc"]
+_data = {
+&"RESET": SubResource("Animation_38ino"),
+&"show_mark": SubResource("Animation_8e3ao")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8e3ao"]
+radius = 0.221381
+height = 2.01715
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8e3ao"]
+angle_min = -330.6
+angle_max = 392.2
+initial_velocity_min = -0.5
+initial_velocity_max = 0.5
+gravity = Vector3(0, -1, 0)
+turbulence_influence_max = 0.131
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38ino"]
+transparency = 1
+albedo_color = Color(0.545098, 0.117647, 0.247059, 0.34902)
+
+[sub_resource type="SphereMesh" id="SphereMesh_fcftc"]
+material = SubResource("StandardMaterial3D_38ino")
+radius = 0.025
+height = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fcftc"]
+albedo_color = Color(1, 0.243137, 0, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8e3ao"]
+height = 1.0
+radius = 11.5205
+
+[node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
+collision_layer = 16
+collision_mask = 15
+script = ExtResource("1_6xk8f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fcftc")
+}
+
+[node name="EnemyBody" parent="." instance=ExtResource("2_8e3ao")]
+transform = Transform3D(-1.5, 0, -1.50996e-07, 0, 1.2, 0, 2.26494e-07, 0, -1, 0, 0, 0)
+
+[node name="CSGSphere3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02211, 0)
+shape = SubResource("CapsuleShape3D_8e3ao")
+
+[node name="GameOverArea" type="Area3D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="GameOverArea"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+polygon = PackedVector2Array(6, -12, -6, -12, -6.004, -12, -6, -4, 0, 0, 0, 0, 6, -4)
+
+[node name="PlayerPointer" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 79.9398, -0.0775431, 0, 3.10172, 1.9985, 0, 1, 0)
+target_position = Vector3(0, 0, -8)
+collision_mask = 7
+collide_with_areas = true
+
+[node name="StunTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Particles" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.81945, 0)
+visible = false
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Particles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, -0.141016, 0)
+amount = 40
+amount_ratio = 0.8
+lifetime = 0.4
+speed_scale = 0.5
+explosiveness = 0.14
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_8e3ao")
+draw_passes = 4
+draw_pass_1 = SubResource("SphereMesh_fcftc")
+draw_pass_2 = null
+draw_pass_3 = null
+draw_pass_4 = null
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Particles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, -0.141016, 0)
+amount = 40
+amount_ratio = 0.8
+lifetime = 0.4
+speed_scale = 0.5
+explosiveness = 0.14
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_8e3ao")
+draw_passes = 4
+draw_pass_1 = SubResource("SphereMesh_fcftc")
+draw_pass_2 = null
+draw_pass_3 = null
+draw_pass_4 = null
+
+[node name="GPUParticles3D3" type="GPUParticles3D" parent="Particles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.141016, 0.25)
+amount = 40
+amount_ratio = 0.8
+lifetime = 0.4
+speed_scale = 0.5
+explosiveness = 0.14
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_8e3ao")
+draw_passes = 4
+draw_pass_1 = SubResource("SphereMesh_fcftc")
+draw_pass_2 = null
+draw_pass_3 = null
+draw_pass_4 = null
+
+[node name="GPUParticles3D4" type="GPUParticles3D" parent="Particles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.141016, -0.25)
+amount = 40
+amount_ratio = 0.8
+lifetime = 0.4
+speed_scale = 0.5
+explosiveness = 0.14
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_8e3ao")
+draw_passes = 4
+draw_pass_1 = SubResource("SphereMesh_fcftc")
+draw_pass_2 = null
+draw_pass_3 = null
+draw_pass_4 = null
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, -2)
+
+[node name="ExclamationMark" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_fcftc")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ExclamationMark"]
+size = Vector3(0.1, 0.1, 0.005)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="ExclamationMark"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+size = Vector3(0.1, 0.5, 0.005)
+
+[node name="DetectionArea" type="Area3D" parent="."]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea"]
+shape = SubResource("CylinderShape3D_8e3ao")
+
+[connection signal="body_entered" from="GameOverArea" to="." method="_on_game_over_area_body_entered"]
+[connection signal="body_exited" from="GameOverArea" to="." method="_on_game_over_area_body_exited"]
+[connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwvldxkpyn476"]
+
+[ext_resource type="Script" uid="uid://cjcfxlw4ybbik" path="res://scripts/ui/control.gd" id="1_bchhi"]
+[ext_resource type="Texture2D" uid="uid://caxh58i7gsutu" path="res://assets/icons/keyboard_0.png" id="2_p3k0e"]
+
+[node name="Control" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_bchhi")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+text = "TEST"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_p3k0e")

@@ -1,0 +1,137 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc7ewr564oh2e"]
+
+[ext_resource type="Script" uid="uid://buv5uv5hp5qbx" path="res://scripts/ui/commands.gd" id="1_hkshw"]
+[ext_resource type="FontFile" uid="uid://c5bjrlrg78x6n" path="res://assets/fonts/Michroma-Regular.ttf" id="1_hsgx1"]
+[ext_resource type="PackedScene" uid="uid://cwvldxkpyn476" path="res://scenes/ui/control.tscn" id="1_mie3b"]
+
+[sub_resource type="Theme" id="Theme_3g451"]
+default_font = ExtResource("1_hsgx1")
+
+[node name="Commands" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_3g451")
+script = ExtResource("1_hkshw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.243137, 0.298039, 0.34902, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -295.0
+offset_right = 295.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MainVerticalBox" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MainVerticalBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "COMANDI"
+horizontal_alignment = 1
+
+[node name="CommandListBox" type="HBoxContainer" parent="VBoxContainer/MainVerticalBox"]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MainVerticalBox/CommandListBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ForwardLabel" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer" instance=ExtResource("1_mie3b")]
+layout_mode = 2
+text = "AVANTI"
+texture_path = "res://assets/icons/keyboard_w.png"
+
+[node name="BackwardLabel" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer" instance=ExtResource("1_mie3b")]
+layout_mode = 2
+text = "INDIETRO"
+texture_path = "res://assets/icons/keyboard_s.png"
+
+[node name="RightLabel" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer" instance=ExtResource("1_mie3b")]
+layout_mode = 2
+text = "DESTRA"
+texture_path = "res://assets/icons/keyboard_d.png"
+
+[node name="LeftLabel" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer" instance=ExtResource("1_mie3b")]
+layout_mode = 2
+text = "SINISTRA"
+texture_path = "res://assets/icons/keyboard_a.png"
+
+[node name="RunLabel" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer" instance=ExtResource("1_mie3b")]
+layout_mode = 2
+text = "CORRI"
+texture_path = "res://assets/icons/keyboard_shift.png"
+
+[node name="CrouchLabel" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer" instance=ExtResource("1_mie3b")]
+layout_mode = 2
+text = "ACCOVACCIATI"
+texture_path = "res://assets/icons/keyboard_ctrl.png"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MainVerticalBox/CommandListBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PickLabel" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer2" instance=ExtResource("1_mie3b")]
+layout_mode = 2
+text = "PRENDI"
+texture_path = "res://assets/icons/mouse_left.png"
+
+[node name="ThrowLabel" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer2" instance=ExtResource("1_mie3b")]
+layout_mode = 2
+text = "LANCIA"
+texture_path = "res://assets/icons/mouse_left.png"
+
+[node name="ReleaseLabel" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer2" instance=ExtResource("1_mie3b")]
+layout_mode = 2
+text = "LASCIA"
+texture_path = "res://assets/icons/mouse_right.png"
+
+[node name="ScanLabel" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer2" instance=ExtResource("1_mie3b")]
+layout_mode = 2
+text = "SCANSIONA"
+texture_path = "res://assets/icons/keyboard_f.png"
+
+[node name="RadioLabel" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer2" instance=ExtResource("1_mie3b")]
+layout_mode = 2
+text = "RADIO"
+texture_path = "res://assets/icons/keyboard_alt.png"
+
+[node name="PauseLabel" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer2" instance=ExtResource("1_mie3b")]
+layout_mode = 2
+text = "PAUSA"
+texture_path = "res://assets/icons/keyboard_p.png"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MainVerticalBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 250
+theme_override_constants/margin_right = 250
+
+[node name="ExitButton" type="Button" parent="VBoxContainer/MainVerticalBox/MarginContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "ESCI
+"
+
+[connection signal="pressed" from="VBoxContainer/MainVerticalBox/MarginContainer/ExitButton" to="." method="_on_exit_button_pressed"]

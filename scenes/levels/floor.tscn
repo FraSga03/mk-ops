@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://jbm4yrdk6uks"]
+
+[ext_resource type="PackedScene" uid="uid://dvjhk8a15mxc2" path="res://scenes/level_elements/floor.tscn" id="1_0rtlt"]
+[ext_resource type="PackedScene" uid="uid://c5w1pacqku3wp" path="res://scenes/level_elements/long_wall.tscn" id="2_jhx1l"]
+
+[node name="Floor" type="Node3D"]
+
+[node name="Flooring" type="Node3D" parent="."]
+
+[node name="Floor" parent="Flooring" instance=ExtResource("1_0rtlt")]
+transform = Transform3D(0.999998, 0, -0.0021293, 0, 1, 0, 0.0021293, 0, 0.999998, 0, -0.5, 0)
+
+[node name="Floor2" parent="Flooring" instance=ExtResource("1_0rtlt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.5, 0)
+visible = false
+
+[node name="Walls" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+
+[node name="LongWall3" parent="Walls" instance=ExtResource("2_jhx1l")]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, -25, 0, 0)
+
+[node name="LongWall4" parent="Walls" instance=ExtResource("2_jhx1l")]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 25, 0, 0)
+
+[node name="Lights" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.2, 0)
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="MovableObjects" type="Node3D" parent="."]
+
+[node name="Enemies" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

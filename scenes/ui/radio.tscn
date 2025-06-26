@@ -1,0 +1,275 @@
+[gd_scene load_steps=14 format=3 uid="uid://bw1u8p1f64hs1"]
+
+[ext_resource type="FontFile" uid="uid://c5bjrlrg78x6n" path="res://assets/fonts/Michroma-Regular.ttf" id="1_703vu"]
+[ext_resource type="Shader" uid="uid://eqacrre2ol4v" path="res://scenes/ui/radio.gdshader" id="2_5ytid"]
+[ext_resource type="Texture2D" uid="uid://c5j3k4ml2o5q8" path="res://assets/icons/keyboard_arrow_right_outline.png" id="2_l0i8x"]
+[ext_resource type="Script" uid="uid://c0g8by5idw642" path="res://scripts/ui/radio.gd" id="2_pfbhg"]
+[ext_resource type="Texture2D" uid="uid://btl1ysj3uqrtq" path="res://assets/icons/keyboard.png" id="3_efin6"]
+[ext_resource type="Texture2D" uid="uid://cd7ecamvabght" path="res://assets/icons/keyboard_x_outline.png" id="5_smatk"]
+
+[sub_resource type="Theme" id="Theme_l0i8x"]
+default_font = ExtResource("1_703vu")
+
+[sub_resource type="Animation" id="Animation_5ytid"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainBg:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.545098, 0.0901961, 1, 0.313726)]
+}
+
+[sub_resource type="Animation" id="Animation_smatk"]
+resource_name = "hide"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.06667),
+"transitions": PackedFloat32Array(1, 0.4),
+"update": 0,
+"values": [Color(1, 1, 1, 0.999976), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainBg:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(0.2, 1),
+"update": 0,
+"values": [Color(0.545098, 0.0901961, 1, 0.313726), Color(0.545, 0.09, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l0i8x"]
+resource_name = "show"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.4, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.999976)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.2, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainBg:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 0.2),
+"update": 0,
+"values": [Color(0.545, 0.09, 1, 0), Color(0.545098, 0.0901961, 1, 0.313726)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_efin6"]
+_data = {
+&"RESET": SubResource("Animation_5ytid"),
+&"hide": SubResource("Animation_smatk"),
+&"show": SubResource("Animation_l0i8x")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_efin6"]
+shader = ExtResource("2_5ytid")
+shader_parameter/lines = 80
+shader_parameter/amplitude = 0.9
+shader_parameter/frequency = 0.1
+shader_parameter/intensity = 0.75
+shader_parameter/line_sharpness = 0.5
+shader_parameter/line_size = 0.8
+shader_parameter/fade = 0.1
+shader_parameter/rest_size = -0.2
+shader_parameter/edge = 0.05
+shader_parameter/speed = 0.5
+shader_parameter/color = Vector4(1, 1, 1, 1)
+shader_parameter/dot_matrix = false
+shader_parameter/dot_matriz_size = 80
+shader_parameter/speech_sim = true
+shader_parameter/speech_intensity = 0.8
+shader_parameter/progress = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ytid"]
+bg_color = Color(0.243137, 0.298039, 0.34902, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.227451, 0.388235, 0.317647, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Radio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_l0i8x")
+script = ExtResource("2_pfbhg")
+
+[node name="MainBg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.545098, 0.0901961, 1, 0.313726)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_efin6")
+}
+autoplay = "show"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+modulate = Color(1, 1, 1, 0.999976)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -202.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="RadioBg" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.635294, 0.635294, 0.635294, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(215, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="ColorRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+material = SubResource("ShaderMaterial_efin6")
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_efin6")
+
+[node name="CharacterName" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.0431373, 0.0470588, 0.0627451, 1)
+theme_override_font_sizes/normal_font_size = 17
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ytid")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ContentText" type="RichTextLabel" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 24
+
+[node name="BoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+alignment = 2
+
+[node name="CloseButton" type="Button" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "CHIUDI"
+icon = ExtResource("5_smatk")
+icon_alignment = 2
+expand_icon = true
+
+[node name="GoOnButton" type="Button" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "AVANTI"
+icon = ExtResource("2_l0i8x")
+icon_alignment = 2
+expand_icon = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/BoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/BoxContainer/GoOnButton" to="." method="_on_go_on_button_pressed"]

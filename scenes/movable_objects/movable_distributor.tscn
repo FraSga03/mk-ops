@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuh8gy68w3gvu"]
+
+[ext_resource type="PackedScene" uid="uid://ku16cxy8qd7l" path="res://scenes/movable_objects/movable_obj.tscn" id="1_rf8y6"]
+[ext_resource type="Texture2D" uid="uid://cx7wfon5nkok5" path="res://assets/textures/Light/texture_03.png" id="2_flwds"]
+[ext_resource type="Shader" uid="uid://dmear5oe780e3" path="res://scenes/movable_objects/movable_box.gdshader" id="3_tv7e2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_flwds"]
+size = Vector3(1.5, 2.5, 0.8)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ittik"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_tv7e2")
+shader_parameter/effect_enabled = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tv7e2"]
+resource_local_to_scene = true
+next_pass = SubResource("ShaderMaterial_ittik")
+albedo_color = Color(0.572988, 0.572988, 0.572988, 1)
+albedo_texture = ExtResource("2_flwds")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ittik"]
+albedo_color = Color(0.337255, 1, 1, 0.317647)
+albedo_texture = ExtResource("2_flwds")
+
+[node name="MovableDistributor" instance=ExtResource("1_rf8y6")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("BoxShape3D_flwds")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_tv7e2")
+size = Vector3(1.5, 2.5, 0.8)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.371961)
+material_override = SubResource("StandardMaterial3D_ittik")
+size = Vector3(1.25, 2, 0.1)

@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://dq6nnyg1f8l4i"]
+
+[ext_resource type="PackedScene" uid="uid://ku16cxy8qd7l" path="res://scenes/movable_objects/movable_obj.tscn" id="1_0k7ju"]
+[ext_resource type="Script" uid="uid://h7skyr6pejru" path="res://scripts/movable_objects/movable_monitor.gd" id="2_km84h"]
+[ext_resource type="Texture2D" uid="uid://mg6dfoihl3nt" path="res://assets/textures/Dark/texture_02.png" id="2_mwrn7"]
+[ext_resource type="Shader" uid="uid://csom70drinrs8" path="res://scripts/movable_objects/movable_ampoule.gdshader" id="3_1p8gh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_km84h"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_1p8gh")
+shader_parameter/albedo = Color(1, 1, 1, 0)
+shader_parameter/roughness = 0.15
+shader_parameter/refraction = 0.5
+shader_parameter/refraction_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/normal_strength = 0.0
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+shader_parameter/surface_contribution = 0.2
+shader_parameter/specular_contribution = 0.2
+shader_parameter/refraction_contribution = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1p8gh"]
+resource_local_to_scene = true
+next_pass = SubResource("ShaderMaterial_km84h")
+albedo_texture = ExtResource("2_mwrn7")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0k7ju"]
+size = Vector3(1.1, 0.8, 0.3)
+
+[node name="MovableObject" instance=ExtResource("1_0k7ju")]
+script = ExtResource("2_km84h")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_1p8gh")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50266, -0.0197643)
+size = Vector3(1.1, 0.6, 0.01)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" index="1"]
+size = Vector3(0.6, 0.04, 0.3)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.343455, -0.0519039)
+radius = 0.04
+height = 0.7
+sides = 15
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00999999, 0.380632, 0)
+shape = SubResource("BoxShape3D_0k7ju")
+debug_color = Color(0.480652, 0.50767, 0.785116, 0.42)

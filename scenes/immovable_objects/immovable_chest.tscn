@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://vuli75g2xjdi"]
+
+[ext_resource type="PackedScene" uid="uid://dm6dp5bddsss8" path="res://scenes/immovable_objects/immovable_object.tscn" id="1_wrpu5"]
+[ext_resource type="Texture2D" uid="uid://cvi848d48l44i" path="res://assets/textures/Orange/texture_13.png" id="2_pblff"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wrpu5"]
+size = Vector3(3, 1.5, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rv604"]
+albedo_texture = ExtResource("2_pblff")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[node name="ImmovableChest" instance=ExtResource("1_wrpu5")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("BoxShape3D_wrpu5")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_rv604")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" index="0"]
+size = Vector3(3, 1.5, 1.5)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 0.7)
+operation = 2
+size = Vector3(1, 1, 0.2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, 0.7)
+size = Vector3(1, 1, 0.2)

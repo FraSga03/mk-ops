@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://xn8arne2q2vs"]
+
+[ext_resource type="PackedScene" uid="uid://ku16cxy8qd7l" path="res://scenes/movable_objects/movable_obj.tscn" id="1_g8anf"]
+[ext_resource type="Texture2D" uid="uid://3p75pyhghw3h" path="res://assets/textures/Green/texture_11.png" id="2_151cx"]
+[ext_resource type="Script" uid="uid://b8sff1av8c3yt" path="res://scripts/movable_objects/movable_can.gd" id="2_mj0xx"]
+[ext_resource type="Shader" uid="uid://dmear5oe780e3" path="res://scenes/movable_objects/movable_box.gdshader" id="4_6uhkn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_151cx"]
+size = Vector3(0.35, 0.35, 0.35)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8a3e4"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_6uhkn")
+shader_parameter/effect_enabled = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mj0xx"]
+resource_local_to_scene = true
+next_pass = SubResource("ShaderMaterial_8a3e4")
+albedo_texture = ExtResource("2_151cx")
+uv1_scale = Vector3(0.9, 0.9, 0.9)
+
+[node name="MovableObject" instance=ExtResource("1_g8anf")]
+script = ExtResource("2_mj0xx")
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000939608, -0.00783861, -0.000842571)
+shape = SubResource("BoxShape3D_151cx")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00584841, -5.96046e-08, -0.000138044)
+radius = 0.2
+height = 0.35
+sides = 12
+material = SubResource("StandardMaterial3D_mj0xx")

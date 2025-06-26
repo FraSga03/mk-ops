@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnxyqt3h0v03i"]
+
+[ext_resource type="PackedScene" uid="uid://citl3ek5sokj5" path="res://scenes/movable_objects/movable_case.tscn" id="1_qd3p6"]
+[ext_resource type="PackedScene" uid="uid://dq6nnyg1f8l4i" path="res://scenes/movable_objects/movable_monitor.tscn" id="2_o5wjj"]
+[ext_resource type="PackedScene" uid="uid://bgxa8ay13nitg" path="res://scenes/movable_objects/movable_keyboard.tscn" id="3_o5wjj"]
+
+[node name="Pc" type="Node3D"]
+
+[node name="MovableObject" parent="." instance=ExtResource("1_qd3p6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.796536, 0, 0)
+max_contacts_reported = 10
+
+[node name="MovableObject2" parent="." instance=ExtResource("2_o5wjj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.278587, -0.470101, -0.179179)
+max_contacts_reported = 10
+
+[node name="MovableObject3" parent="." instance=ExtResource("3_o5wjj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.266891, -0.437694, 0.274965)
+max_contacts_reported = 10

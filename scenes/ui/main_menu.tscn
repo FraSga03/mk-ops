@@ -1,0 +1,135 @@
+[gd_scene load_steps=6 format=3 uid="uid://hnw0g1o6slft"]
+
+[ext_resource type="FontFile" uid="uid://c5bjrlrg78x6n" path="res://assets/fonts/Michroma-Regular.ttf" id="1_fe2o3"]
+[ext_resource type="Script" uid="uid://bne51b483kely" path="res://scripts/ui/main_menu.gd" id="2_1g8jr"]
+[ext_resource type="AudioStream" uid="uid://c50hrqkwol8m8" path="res://assets/musics/main_menu.mp3" id="3_1g8jr"]
+
+[sub_resource type="Theme" id="Theme_7vrkn"]
+default_font = ExtResource("1_fe2o3")
+default_font_size = 30
+
+[sub_resource type="Theme" id="Theme_fu7sn"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_7vrkn")
+script = ExtResource("2_1g8jr")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0431373, 0.0470588, 0.0627451, 1)
+
+[node name="Background2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.371
+anchor_bottom = 1.0
+offset_right = -0.392029
+grow_vertical = 2
+color = Color(0.545098, 0.0901961, 1, 1)
+
+[node name="Buttons" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -132.0
+offset_right = 397.0
+offset_bottom = 132.0
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="PlayButton" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../ExitButton")
+focus_neighbor_top = NodePath("../ExitButton")
+focus_neighbor_right = NodePath("../CommandButton")
+focus_neighbor_bottom = NodePath("../CommandButton")
+text = "GIOCA"
+alignment = 0
+
+[node name="CommandButton" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../PlayButton")
+focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_right = NodePath("../ExitButton")
+focus_neighbor_bottom = NodePath("../ExitButton")
+theme = SubResource("Theme_fu7sn")
+text = "COMANDI"
+alignment = 0
+
+[node name="RecordButton" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../PlayButton")
+focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_right = NodePath("../ExitButton")
+focus_neighbor_bottom = NodePath("../ExitButton")
+theme = SubResource("Theme_fu7sn")
+text = "RECORD"
+alignment = 0
+
+[node name="LangButton" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../PlayButton")
+focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_right = NodePath("../ExitButton")
+focus_neighbor_bottom = NodePath("../ExitButton")
+theme = SubResource("Theme_fu7sn")
+text = "RECORD"
+alignment = 0
+
+[node name="ExitButton" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../CommandButton")
+focus_neighbor_top = NodePath("../CommandButton")
+focus_neighbor_right = NodePath("../PlayButton")
+focus_neighbor_bottom = NodePath("../PlayButton")
+theme = SubResource("Theme_fu7sn")
+text = "ESCI
+"
+alignment = 0
+
+[node name="Title" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -201.0
+offset_top = -21.5
+offset_bottom = 21.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 100
+
+[node name="Label" type="Label" parent="Title"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "MK-OPS"
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1g8jr")
+autoplay = true
+
+[connection signal="pressed" from="Buttons/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/CommandButton" to="." method="_on_commands_button_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/RecordButton" to="." method="_on_record_button_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/LangButton" to="." method="_on_lang_button_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="gui_input" from="Title" to="." method="_on_title_gui_input"]

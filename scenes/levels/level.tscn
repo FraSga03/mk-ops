@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpdr8pcpp5qg"]
+
+[ext_resource type="Script" uid="uid://dxnom54u06x58" path="res://scripts/levels/level.gd" id="1_b2cq8"]
+[ext_resource type="PackedScene" uid="uid://bfmxe3usiv677" path="res://scenes/ui/game_ui.tscn" id="2_xb4v1"]
+[ext_resource type="PackedScene" uid="uid://dofxq83b8pvi1" path="res://scenes/player/player.tscn" id="3_urvlt"]
+[ext_resource type="AudioStream" uid="uid://dds52v4pr7p1m" path="res://assets/musics/level_theme.mp3" id="4_xb4v1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vk4oj"]
+sky_top_color = Color(0.488513, 0.297206, 0.880429, 1)
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_ffxgx"]
+sky_material = SubResource("ProceduralSkyMaterial_vk4oj")
+
+[sub_resource type="Environment" id="Environment_0gebs"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.5
+sky = SubResource("Sky_ffxgx")
+ambient_light_color = Color(0.830335, 0.830335, 0.830335, 1)
+glow_enabled = true
+fog_light_color = Color(0.22431, 0.246636, 0.281736, 1)
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_b2cq8")
+
+[node name="GameUI" parent="." instance=ExtResource("2_xb4v1")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0gebs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("3_urvlt")]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xb4v1")
+autoplay = true

@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5j5h51317psj"]
+
+[ext_resource type="PackedScene" uid="uid://dm6dp5bddsss8" path="res://scenes/immovable_objects/immovable_object.tscn" id="1_gydkg"]
+[ext_resource type="Texture2D" uid="uid://bpdfdduuc3kt0" path="res://assets/textures/Light/texture_02.png" id="2_fgjvl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fgjvl"]
+size = Vector3(2, 1.3, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1a6hs"]
+size = Vector3(2, 2.1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1a6hs"]
+albedo_color = Color(0.485403, 0.563977, 0.637351, 1)
+albedo_texture = ExtResource("2_fgjvl")
+uv1_scale = Vector3(0.3, 0.3, 0.3)
+uv1_triplanar = true
+
+[node name="ImmovablePrinter" instance=ExtResource("1_gydkg")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(0.999954, -0.00961662, 0, 0.00961662, 0.999954, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_fgjvl")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 1.25)
+shape = SubResource("BoxShape3D_1a6hs")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_1a6hs")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" index="0"]
+size = Vector3(2, 1.3, 1.5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, 1.26123, 1.25644)
+size = Vector3(2, 0.1, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 1.25)
+size = Vector3(2, 1.8, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.662311, -0.387622)
+operation = 2
+size = Vector3(1.5, 0.3, 0.3)

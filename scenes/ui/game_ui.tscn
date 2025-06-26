@@ -1,0 +1,248 @@
+[gd_scene load_steps=15 format=3 uid="uid://bfmxe3usiv677"]
+
+[ext_resource type="Script" uid="uid://3hd4rw2xanpb" path="res://scenes/ui/game_ui.gd" id="1_bma8u"]
+[ext_resource type="Texture2D" uid="uid://cuti0ba4fdqju" path="res://assets/textures/crosshair/cut-circle-icon-2440760-512.png" id="1_xjfbv"]
+[ext_resource type="Script" uid="uid://dru1ompourfjg" path="res://scripts/ui/stamina_bar.gd" id="3_bma8u"]
+[ext_resource type="FontFile" uid="uid://c5bjrlrg78x6n" path="res://assets/fonts/Michroma-Regular.ttf" id="4_fct72"]
+
+[sub_resource type="FontVariation" id="FontVariation_fct72"]
+base_font = ExtResource("4_fct72")
+spacing_space = 10
+
+[sub_resource type="Theme" id="Theme_v1bdg"]
+default_font = SubResource("FontVariation_fct72")
+
+[sub_resource type="FontVariation" id="FontVariation_ru5ln"]
+base_font = ExtResource("4_fct72")
+spacing_glyph = 13
+spacing_space = 2
+
+[sub_resource type="Theme" id="Theme_qrkc0"]
+default_font = SubResource("FontVariation_ru5ln")
+default_font_size = 15
+
+[sub_resource type="Theme" id="Theme_ru5ln"]
+default_font = ExtResource("4_fct72")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_fct72"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ru5ln"]
+texture = SubResource("CanvasTexture_fct72")
+modulate_color = Color(0.635294, 0.635294, 0.635294, 1)
+
+[sub_resource type="Animation" id="Animation_ru5ln"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LevelLabelControl:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-350.0]
+}
+
+[sub_resource type="Animation" id="Animation_fct72"]
+resource_name = "showLevelLabel"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LevelLabelControl:position_x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 1.66667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-400, 648), -350.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ru5ln"]
+_data = {
+&"RESET": SubResource("Animation_ru5ln"),
+&"showLevelLabel": SubResource("Animation_fct72")
+}
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_bma8u")
+
+[node name="AimCross" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource("1_xjfbv")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StaminaBar" type="Node2D" parent="Control"]
+position = Vector2(-25, 150)
+script = ExtResource("3_bma8u")
+
+[node name="Time" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="SecondBackground2" type="Polygon2D" parent="Time"]
+color = Color(0.355314, 0.355314, 0.355314, 1)
+antialiased = true
+polygon = PackedVector2Array(-287, 0, 0, 0, 0, 50, -308, 50)
+
+[node name="MarginContainer" type="MarginContainer" parent="Time"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -272.0
+offset_bottom = 50.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Time/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TimeTitleLabel" type="Label" parent="Time/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = SubResource("Theme_v1bdg")
+theme_override_font_sizes/font_size = 21
+text = "TIME"
+
+[node name="TimeLabel" type="Label" parent="Time/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme = SubResource("Theme_qrkc0")
+text = "6645:5"
+horizontal_alignment = 3
+vertical_alignment = 1
+
+[node name="LaunchPower" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SecondBackground" type="Polygon2D" parent="LaunchPower"]
+color = Color(0.545098, 0.0901961, 1, 1)
+antialiased = true
+polygon = PackedVector2Array(0, 0, 575, 0, 540, 50, 0, 50)
+
+[node name="PowerMarginContainer" type="MarginContainer" parent="LaunchPower"]
+custom_minimum_size = Vector2(575, 50)
+layout_mode = 0
+offset_right = 575.0
+offset_bottom = 50.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 37
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LaunchPower/PowerMarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="LaunchPower/PowerMarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = SubResource("Theme_ru5ln")
+theme_override_font_sizes/font_size = 21
+text = "POWER"
+
+[node name="PowerProgress" type="ProgressBar" parent="LaunchPower/PowerMarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxTexture_ru5ln")
+min_value = 1.0
+max_value = 10.0
+value = 5.99
+show_percentage = false
+
+[node name="LevelLabelControl" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_right = -350.0
+grow_vertical = 0
+pivot_offset = Vector2(0.275, 0)
+
+[node name="SecondBackground" type="Polygon2D" parent="LevelLabelControl"]
+color = Color(0.545098, 0.0901961, 1, 1)
+antialiased = true
+polygon = PackedVector2Array(0, -50, 190, -50, 225, 0, 0, 0)
+
+[node name="PowerMarginContainer" type="MarginContainer" parent="LevelLabelControl"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 575.0
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 37
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelLabelControl/PowerMarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="LevelLabel" type="Label" parent="LevelLabelControl/PowerMarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = SubResource("Theme_ru5ln")
+theme_override_font_sizes/font_size = 21
+text = "Livello 1 "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ru5ln")
+}

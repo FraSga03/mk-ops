@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5w1pacqku3wp"]
+
+[ext_resource type="Texture2D" uid="uid://cx7wfon5nkok5" path="res://assets/textures/Light/texture_03.png" id="1_f1q83"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3y7k"]
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_f1q83")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[node name="LongWall" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+material_override = SubResource("StandardMaterial3D_i3y7k")
+use_collision = true
+collision_mask = 15
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(50, 8, 1)

@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://br3igf0e2hnpq"]
+
+[ext_resource type="PackedScene" uid="uid://ku16cxy8qd7l" path="res://scenes/movable_objects/movable_obj.tscn" id="1_tprvs"]
+[ext_resource type="Shader" uid="uid://dmear5oe780e3" path="res://scenes/movable_objects/movable_box.gdshader" id="2_ryfbv"]
+[ext_resource type="Script" uid="uid://cdocmjn3wmfbc" path="res://scripts/movable_objects/movable_cone.gd" id="2_sh3ll"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tprvs"]
+height = 1.5
+radius = 0.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sh3ll"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_ryfbv")
+shader_parameter/effect_enabled = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_01h4b"]
+next_pass = SubResource("ShaderMaterial_sh3ll")
+albedo_color = Color(0.682409, 0.339779, 0, 1)
+
+[node name="MovableCone" groups=["Warehouse"] instance=ExtResource("1_tprvs")]
+script = ExtResource("2_sh3ll")
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("CylinderShape3D_tprvs")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." index="1"]
+radius = 0.8
+height = 1.5
+sides = 15
+cone = true
+material = SubResource("StandardMaterial3D_01h4b")

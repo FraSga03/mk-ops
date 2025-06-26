@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://bok7kyhc6bsha"]
+
+[ext_resource type="Script" uid="uid://byjtscnuq1glv" path="res://scripts/enemy.gd" id="1_6xk8f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ykcao"]
+
+[node name="EnemyPath" type="PathFollow3D"]
+script = ExtResource("1_6xk8f")
+
+[node name="PlayerPointer" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(0, 0, -40)
+collision_mask = 2
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_ykcao")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="GameOverArea" type="Area3D" parent="CharacterBody3D"]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="CharacterBody3D/GameOverArea"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+polygon = PackedVector2Array(-9.59056, 14.2031, 9.64331, 3.77827, 3.04804, -5.91487, -9.40656, -7.07486)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138733, 1.45337, -0.482296)
+size = Vector3(0.549805, 0.0932617, 1)
+
+[connection signal="body_entered" from="CharacterBody3D/GameOverArea" to="." method="_on_game_over_body_entered"]
+[connection signal="body_exited" from="CharacterBody3D/GameOverArea" to="." method="_on_game_over_area_body_exited"]

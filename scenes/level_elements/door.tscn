@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://chocwgcq2swuy"]
+
+[ext_resource type="Texture2D" uid="uid://cx7wfon5nkok5" path="res://assets/textures/Light/texture_03.png" id="1_i48mo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_limre"]
+albedo_texture = ExtResource("1_i48mo")
+uv1_triplanar = true
+
+[node name="Door" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+material_override = SubResource("StandardMaterial3D_limre")
+use_collision = true
+collision_mask = 15
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(3, 8, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0)
+operation = 2
+size = Vector3(2, 3, 1)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfpx3s2a0h1p4"]
+
+[ext_resource type="PackedScene" uid="uid://dm6dp5bddsss8" path="res://scenes/immovable_objects/immovable_object.tscn" id="1_gj2bl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gj2bl"]
+size = Vector3(5, 1.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6a1iy"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.321728, 0.321728, 0.321728, 1)
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+uv2_scale = Vector3(0.5, 0.5, 0.5)
+
+[node name="ImmovableDivider" instance=ExtResource("1_gj2bl")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("BoxShape3D_gj2bl")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="CollisionShape3D" index="0"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CollisionShape3D/CSGCombiner3D" index="0"]
+size = Vector3(5, 1.5, 0.5)
+material = SubResource("StandardMaterial3D_6a1iy")

@@ -1,0 +1,123 @@
+[gd_scene load_steps=13 format=3 uid="uid://c70fipddp0hka"]
+
+[ext_resource type="Script" uid="uid://dm36abtdmawmy" path="res://scripts/level_elements/elevator.gd" id="1_odsyq"]
+[ext_resource type="Texture2D" uid="uid://buxi7f37o6kq2" path="res://assets/textures/Dark/texture_06.png" id="2_fdego"]
+[ext_resource type="Texture2D" uid="uid://buntvdbt8tqo0" path="res://assets/textures/Orange/texture_12.png" id="3_fdego"]
+[ext_resource type="AudioStream" uid="uid://dxmd5a7ssfe4h" path="res://assets/musics/start_elevator.mp3" id="4_w24cq"]
+[ext_resource type="AudioStream" uid="uid://tt5sml0ne31w" path="res://assets/musics/open_elevator_door.mp3" id="5_npmde"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_odsyq"]
+albedo_texture = ExtResource("2_fdego")
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdego"]
+size = Vector3(3, 2, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oyqli"]
+size = Vector3(4, 1, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w24cq"]
+albedo_texture = ExtResource("2_fdego")
+
+[sub_resource type="BoxMesh" id="BoxMesh_npmde"]
+size = Vector3(3.5, 1, 3.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdego"]
+albedo_color = Color(4, 4, 4, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oyqli"]
+albedo_texture = ExtResource("3_fdego")
+metallic = 0.54
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
+[node name="Elevator" type="Node3D"]
+script = ExtResource("1_odsyq")
+
+[node name="TopEntranceDoor2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90359, 4, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_odsyq")
+collision_mask = 14
+size = Vector3(0.2, 4, 2)
+
+[node name="BottomEntranceDoor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90359, -6, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_odsyq")
+size = Vector3(0.2, 4, 2)
+
+[node name="ElevatorFloor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+collision_mask = 3
+
+[node name="ElevatorDoor" type="CSGBox3D" parent="ElevatorFloor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.897, 3.185, 3.3)
+use_collision = true
+collision_mask = 2
+size = Vector3(0.1, 10, 2.5)
+
+[node name="Area3D" type="Area3D" parent="ElevatorFloor"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ElevatorFloor/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_fdego")
+debug_color = Color(0.594314, 0.506312, 0.560396, 0.42)
+debug_fill = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ElevatorFloor"]
+shape = SubResource("BoxShape3D_oyqli")
+debug_fill = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ElevatorFloor/CollisionShape3D"]
+material_override = SubResource("StandardMaterial3D_w24cq")
+mesh = SubResource("BoxMesh_npmde")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="ElevatorFloor/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+material_override = SubResource("StandardMaterial3D_w24cq")
+mesh = SubResource("BoxMesh_npmde")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="ElevatorFloor/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.26675, 0)
+light_energy = 3.0
+shadow_enabled = true
+spot_range = 7.792
+spot_angle = 85.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ElevatorFloor/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.42954, 0)
+material_override = SubResource("StandardMaterial3D_fdego")
+size = Vector3(1, 0.1, 1)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+material_override = SubResource("StandardMaterial3D_oyqli")
+use_collision = true
+collision_mask = 15
+
+[node name="Structure" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+size = Vector3(4, 18, 4)
+
+[node name="InnerStructure" type="CSGBox3D" parent="CSGCombiner3D"]
+operation = 2
+size = Vector3(3.5, 17, 3.5)
+
+[node name="BottomEntrance" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, -6, 0)
+operation = 2
+size = Vector3(0.4, 4, 2)
+
+[node name="TopEntrance" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.999658, 0, 0.0261421, 0, 1, 0, -0.0261421, 0, 0.999658, 1.8, 4, 0)
+operation = 2
+size = Vector3(0.5, 4, 2)
+
+[node name="AudioStreamPlayerInit" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_w24cq")
+
+[node name="AudioStreamPlayerEnding" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_npmde")
+
+[connection signal="body_entered" from="ElevatorFloor/Area3D" to="." method="_on_area_3d_body_entered"]

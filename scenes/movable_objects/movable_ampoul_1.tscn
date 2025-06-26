@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://bl1cw3bgyb27o"]
+
+[ext_resource type="PackedScene" uid="uid://ku16cxy8qd7l" path="res://scenes/movable_objects/movable_obj.tscn" id="1_xci44"]
+[ext_resource type="Shader" uid="uid://csom70drinrs8" path="res://scripts/movable_objects/movable_ampoule.gdshader" id="2_arbaa"]
+[ext_resource type="Script" uid="uid://8wtn15alb3s6" path="res://scripts/movable_objects/movable_ampoul_1.gd" id="2_clw2q"]
+[ext_resource type="Shader" uid="uid://dmear5oe780e3" path="res://scenes/movable_objects/movable_box.gdshader" id="2_lr27w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xci44"]
+size = Vector3(0.37793, 0.355591, 0.351563)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_clw2q"]
+resource_local_to_scene = true
+render_priority = 1
+shader = ExtResource("2_lr27w")
+shader_parameter/effect_enabled = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lr27w"]
+resource_local_to_scene = true
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_clw2q")
+shader = ExtResource("2_arbaa")
+shader_parameter/albedo = Color(1, 1, 1, 0)
+shader_parameter/roughness = 0.15
+shader_parameter/refraction = 0.5
+shader_parameter/refraction_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/normal_strength = 0.0
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+shader_parameter/surface_contribution = 0.2
+shader_parameter/specular_contribution = 0.2
+shader_parameter/refraction_contribution = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[node name="MovableObject" instance=ExtResource("1_xci44")]
+script = ExtResource("2_clw2q")
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0245954, 0)
+shape = SubResource("BoxShape3D_xci44")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." index="1"]
+material_override = SubResource("ShaderMaterial_lr27w")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00188702, -0.00230914, 0.000514805)
+radius = 0.2
+height = 0.3
+sides = 10
+cone = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D/CSGCylinder3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0980891, 0)
+radius = 0.1
+height = 0.2
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGCombiner3D/CSGCylinder3D/CSGCylinder3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0965741, 0)
+operation = 2
+radius = 0.0824979

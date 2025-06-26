@@ -1,0 +1,178 @@
+[gd_scene load_steps=11 format=3 uid="uid://dofxq83b8pvi1"]
+
+[ext_resource type="Script" uid="uid://buxqn7r4sxkrq" path="res://scripts/player/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://bdax8lsrvb64e" path="res://scenes/player/protagonist_model.tscn" id="2_g2els"]
+[ext_resource type="AudioStream" uid="uid://diks3k0yon84d" path="res://assets/musics/stepfoot.mp3" id="3_gmlin"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qhqgy"]
+radius = 0.22
+height = 1.7
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g2els"]
+radius = 0.05
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qhqgy"]
+radius = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqkch"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.545098, 0.0901961, 1, 0.392157)
+refraction_scale = 0.35
+distance_fade_min_distance = 1.0
+
+[sub_resource type="Animation" id="Animation_qhqgy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DomainSphere/CollisionShape3D/CSGSphere3D:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.05]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DomainSphere/CollisionShape3D:shape:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.05]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DomainSphere:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_g2els"]
+resource_name = "expand_sphere"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DomainSphere/CollisionShape3D/CSGSphere3D:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(0.3, 8, 0.2),
+"update": 0,
+"values": [0.05, 15.0, 0.05]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DomainSphere/CollisionShape3D:shape:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(0.3, 8, 1),
+"update": 0,
+"values": [0.05, 15.0, 0.05]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DomainSphere:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qhqgy"]
+_data = {
+&"RESET": SubResource("Animation_qhqgy"),
+&"expand_sphere": SubResource("Animation_g2els")
+}
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+collision_layer = 2
+collision_mask = 31
+script = ExtResource("1_g2els")
+
+[node name="protagonist" parent="." instance=ExtResource("2_g2els")]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+shape = SubResource("CapsuleShape3D_qhqgy")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+transform = Transform3D(-1, 0, -1.50996e-07, -1.77636e-15, 1, 1.49012e-08, 1.50996e-07, 1.49012e-08, -1, -0.5, 0, 0)
+shape = SubResource("SphereShape3D_g2els")
+spring_length = 1.5
+
+[node name="Camera" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+unique_name_in_owner = true
+
+[node name="Pointer" type="RayCast3D" parent="CameraPivot/SpringArm3D" groups=["Player"]]
+unique_name_in_owner = true
+transform = Transform3D(-1, -2.25002e-15, 1.50996e-07, 4.73662e-16, 1, 1.49012e-08, -1.50996e-07, 1.49012e-08, -1, 0, 0, 0)
+target_position = Vector3(0, 0, 20)
+collision_mask = 8
+debug_shape_custom_color = Color(0.819608, 0.803922, 0.988235, 0.133333)
+debug_shape_thickness = 1
+
+[node name="MovableObjectMarker" type="Marker3D" parent="CameraPivot"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, -1.521, 0, 0.667)
+
+[node name="SprintTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="DomainSphere" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.126673, 0)
+collision_layer = 32
+collision_mask = 24
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DomainSphere"]
+shape = SubResource("SphereShape3D_qhqgy")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="DomainSphere/CollisionShape3D"]
+radius = 0.05
+radial_segments = 15
+rings = 15
+material = SubResource("StandardMaterial3D_dqkch")
+
+[node name="DomainAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qhqgy")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_gmlin")
+volume_db = -35.0
+pitch_scale = 2.0
+max_distance = 10.0
+
+[connection signal="timeout" from="SprintTimer" to="." method="_on_sprint_timer_timeout"]
+[connection signal="body_entered" from="DomainSphere" to="." method="_on_domain_sphere_body_entered"]

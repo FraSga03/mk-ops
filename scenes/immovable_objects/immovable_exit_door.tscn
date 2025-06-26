@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmdhwd0ji245g"]
+
+[ext_resource type="PackedScene" uid="uid://dm6dp5bddsss8" path="res://scenes/immovable_objects/immovable_object.tscn" id="1_df3wp"]
+[ext_resource type="Script" uid="uid://css1v4c6nmgo7" path="res://scripts/immovable_objects/immovable_exit_door.gd" id="2_bwvvu"]
+[ext_resource type="Texture2D" uid="uid://dettbwipt0xrh" path="res://assets/textures/Light/texture_10.png" id="2_cb7vx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3t55l"]
+size = Vector3(1.5, 3, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ilbh"]
+albedo_texture = ExtResource("2_cb7vx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n8akb"]
+albedo_color = Color(4, 0.5, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_df3wp"]
+size = Vector3(4, 0.5, 4)
+
+[node name="ImmovableExitDoor" instance=ExtResource("1_df3wp")]
+script = ExtResource("2_bwvvu")
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("BoxShape3D_3t55l")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_3ilbh")
+size = Vector3(1.5, 3, 0.2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.991416, 0.0326824)
+material_override = SubResource("StandardMaterial3D_n8akb")
+size = Vector3(1, 0.3, 0.2)
+
+[node name="Area3D" type="Area3D" parent="." index="3"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("BoxShape3D_df3wp")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

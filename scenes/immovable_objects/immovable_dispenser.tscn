@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://43dot30obkec"]
+
+[ext_resource type="PackedScene" uid="uid://dm6dp5bddsss8" path="res://scenes/immovable_objects/immovable_object.tscn" id="1_hrp8k"]
+[ext_resource type="Texture2D" uid="uid://7uej3frq8fjw" path="res://assets/textures/Light/texture_08.png" id="2_tg2lq"]
+[ext_resource type="Texture2D" uid="uid://dc2s04nyxnahn" path="res://assets/textures/Green/texture_04.png" id="3_tg2lq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mwvnd"]
+size = Vector3(1.5, 3, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twwgg"]
+albedo_color = Color(0.359069, 0.359069, 0.359069, 1)
+albedo_texture = ExtResource("2_tg2lq")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oifku"]
+albedo_texture = ExtResource("2_tg2lq")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5amgh"]
+albedo_texture = ExtResource("3_tg2lq")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[node name="ImmovableDispenser" instance=ExtResource("1_hrp8k")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_mwvnd")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_twwgg")
+size = Vector3(1.5, 1, 1.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+material_override = SubResource("StandardMaterial3D_oifku")
+size = Vector3(1.5, 0.2, 1.5)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+material_override = SubResource("StandardMaterial3D_5amgh")
+radius = 0.710938
+sides = 15
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCylinder3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.871161, -0.482718, 0)
+size = Vector3(0.5, 0.2, 0.2)

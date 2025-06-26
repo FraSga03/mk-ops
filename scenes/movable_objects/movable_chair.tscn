@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://dluibw1i22vxk"]
+
+[ext_resource type="PackedScene" uid="uid://ku16cxy8qd7l" path="res://scenes/movable_objects/movable_obj.tscn" id="1_qkh22"]
+[ext_resource type="Script" uid="uid://c08knt88lmtgr" path="res://scripts/movable_objects/movable_chair.gd" id="2_lpm7c"]
+[ext_resource type="Texture2D" uid="uid://co7alhq7q0yqg" path="res://assets/textures/Dark/texture_01.png" id="3_k44fy"]
+[ext_resource type="Shader" uid="uid://dmear5oe780e3" path="res://scenes/movable_objects/movable_box.gdshader" id="4_k44fy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yuf55"]
+size = Vector3(1, 1.63113, 0.751953)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p3bps"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_k44fy")
+shader_parameter/effect_enabled = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpm7c"]
+resource_local_to_scene = true
+next_pass = SubResource("ShaderMaterial_p3bps")
+albedo_texture = ExtResource("3_k44fy")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[node name="MovableChair" instance=ExtResource("1_qkh22")]
+script = ExtResource("2_lpm7c")
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000336587, 0.385472)
+shape = SubResource("BoxShape3D_yuf55")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_lpm7c")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0.00300837, -0.00294924, -0.00450522)
+size = Vector3(0.8, 1.7, 0.2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0.352)
+size = Vector3(0.2, 0.2, 0.632324)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.224525, 0.393075)
+size = Vector3(0.8, 0.8, 0.2)

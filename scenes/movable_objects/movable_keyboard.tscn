@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgxa8ay13nitg"]
+
+[ext_resource type="PackedScene" uid="uid://ku16cxy8qd7l" path="res://scenes/movable_objects/movable_obj.tscn" id="1_gsbml"]
+[ext_resource type="Texture2D" uid="uid://cejgtv804q2h1" path="res://assets/textures/Dark/texture_04.png" id="2_78fgs"]
+[ext_resource type="Script" uid="uid://cm16ojjq3hh6d" path="res://scripts/movable_objects/movable_keyboard.gd" id="2_81cjh"]
+[ext_resource type="Shader" uid="uid://csom70drinrs8" path="res://scripts/movable_objects/movable_ampoule.gdshader" id="4_1pu30"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gsbml"]
+size = Vector3(0.7, 0.1, 0.3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k7qm5"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_1pu30")
+shader_parameter/albedo = Color(1, 1, 1, 0)
+shader_parameter/roughness = 0.15
+shader_parameter/refraction = 0.5
+shader_parameter/refraction_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/normal_strength = 0.0
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+shader_parameter/surface_contribution = 0.2
+shader_parameter/specular_contribution = 0.2
+shader_parameter/refraction_contribution = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_81cjh"]
+resource_local_to_scene = true
+next_pass = SubResource("ShaderMaterial_k7qm5")
+albedo_texture = ExtResource("2_78fgs")
+
+[node name="MovableObject" instance=ExtResource("1_gsbml")]
+script = ExtResource("2_81cjh")
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("BoxShape3D_gsbml")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_81cjh")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.992974, -0.118335, 0, 0.118335, 0.992974, 0, 0, 0)
+size = Vector3(0.7, 0.05, 0.3)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0268696, -0.121252)
+size = Vector3(0.3, 0.08, 0.01)

@@ -1,0 +1,115 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb4ygnxo2300q"]
+
+[ext_resource type="FontFile" uid="uid://c5bjrlrg78x6n" path="res://assets/fonts/Michroma-Regular.ttf" id="1_0r3gt"]
+[ext_resource type="Script" uid="uid://b5g8iuthvyuhj" path="res://scripts/ui/records.gd" id="2_gr58g"]
+
+[sub_resource type="Theme" id="Theme_3g451"]
+default_font = ExtResource("1_0r3gt")
+
+[node name="Commands" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_3g451")
+script = ExtResource("2_gr58g")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.243137, 0.298039, 0.34902, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -295.0
+offset_right = 295.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MainVerticalBox" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer/MainVerticalBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "RECORD"
+horizontal_alignment = 1
+
+[node name="CommandListBox" type="HBoxContainer" parent="VBoxContainer/MainVerticalBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 150
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MainVerticalBox/CommandListBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+
+[node name="Level1Label" type="Label" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+text = "LIVELLO 1"
+
+[node name="Level2Label" type="Label" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+text = "LIVELLO 2"
+
+[node name="Level3Label" type="Label" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+text = "LIVELLO 3"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MainVerticalBox/CommandListBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+
+[node name="Time1" type="Label" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 2
+
+[node name="Time2" type="Label" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 2
+
+[node name="Time3" type="Label" parent="VBoxContainer/MainVerticalBox/CommandListBox/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MainVerticalBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 250
+theme_override_constants/margin_right = 250
+
+[node name="ExitButton" type="Button" parent="VBoxContainer/MainVerticalBox/MarginContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "ESCI
+"
+
+[connection signal="pressed" from="VBoxContainer/MainVerticalBox/MarginContainer/ExitButton" to="." method="_on_exit_button_pressed"]
