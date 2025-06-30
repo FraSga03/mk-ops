@@ -28,11 +28,11 @@ scan,SCAN,SCANSIONA
 radio,RADIO,RADIO
 pause_c,PAUSE,PAUSA
 no_time,No time,Nessun tempo
-1_1K_1,"According to our information, there's an elevator that will take you to the second floor.",Secondo la nostre informazioni c'è un ascensore che ti porterà al secondo piano
+1_1K_1,"According to our information, there's an elevator that will take you to the second floor.",Secondo le nostre informazioni c'è un ascensore che ti porterà al secondo piano
 1_1K_2,The elevator will surely be guarded by terrorists—don't get spotted!,"L'ascensore sarà sicuramente protetto dai terroristi, non farti scoprire!"
 1_1K_3,We absolutely need to reach the center of the laboratory.,Dobbiamo assolutamente raggiungere il centro del laboratorio
-1_1K_4,"If you need to, use your powers—the objective is always to complete the mission.","Se hai bisogno strutta i tuoi poteri, l'obbiettivo è sempre completare la missione."
-1_1A_1,Remember: the mission is unofficial—you absolutely must not be discovered!,"Ricorda: la missione non è ufficiale, non devi farti assolutamente scoprire!"
+1_1K_4,"If you need to, use your powers—the objective is always to complete the mission.","Se hai bisogno strutta i tuoi poteri, l'obbiettivo è completare la missione."
+1_1A_1,Remember: the mission is unofficial—you absolutely must not be discovered!,"Ricorda: la missione non è ufficiale, non devi assolutamente farti scoprire!"
 1_1A_2,There should be some small objects around that you can use!,Ci dovrebbero essere dei piccoli oggetti che potresti utilizzare lì intorno!
 1_1A_3,"Even if it's not the best solution, you should attack the enemy before they spot you.",Anche se non è la miglior soluzione dovresti attaccare il nemico prima che ti scopra.
 1_1B_1,Watch out for that dead-end alley.,Attento a quel vicolo cieco.
@@ -41,22 +41,22 @@ no_time,No time,Nessun tempo
 1_1B_4,"Luckily, the terrorists aren't robots.",Per fortuna i terroristi non sono dei robot.
 1_1C_1,The elevator should be right in front of you!,L'ascensore dovrebbe essere davanti a te!
 1_1C_2,"You're almost there, don't give up now!","Ci sei quasi, non mollare proprio adesso!"
-1_1C_3,You should neutralize that guard if you're having trouble.,Dovresti neutralizzare quella quella guardia se hai problemi.
+1_1C_3,You should neutralize that guard if you're having trouble.,Dovresti neutralizzare quella guardia se hai problemi.
 1_1C_4,Find something nearby to take him down.,Trova qualcosa nelle vicinanze per neutralizzarlo.
 1_2A_1,"After this room, the storage areas should be next.",Dopo questa stanza dovrebbero esserci i magazzini
 1_2A_2,"Keep it up, and don't forget about the presence of guards.","Continua così, non dimenticarti della presenza delle guardie."
 1_2A_3,You should neutralize that guard if you're having trouble.,Dovresti neutralizzare quella guardia se hai problemi.
 1_2A_4,Find something nearby to take him down.,Trova qualcosa nelle vicinanze per neutralizzarlo.
-1_2B_1,The exit should be nearby.,L'uscita dovrebbe essere lì vicini.
+1_2B_1,The exit should be nearby.,L'uscita dovrebbe essere lì vicino.
 1_2B_2,"You're almost there, don't give up!",
 1_INIT_1,"Can you hear me, R? Do you copy",Mi senti R? Mi ricevi?
-1_INIT_2,Perfect. You've made it to the lab—your mission starts now. Let's go over the objective one last time: you’ve been chosen to infiltrate MK Corp’s laboratory. The facility has been taken over by terrorists.,"Perfetto. Sei arrivata nel laboratorio, la tua missione inizia ora. Ricapitoliamo per l'ultima volta l'obbiettivo: sei stata scelta per infiltrarti nel laboratorio della MK Corp. Il laboratorio è stato occupato da dei terroristi,"
-1_INIT_3,They managed to eliminate the military personnel guarding the site and seize control. The terrorists’ target is the HED meteorite fragment stored in the heart of the lab.,sono riusciti ad eliminare i militari a guardia e a occuparlo. L'obbiettivo dei terroristi è il frammento del meteorite HED costudito nel cuore del laboratorio.
-1_INIT_4,"The public isn't aware of this location, so we can't risk attracting media attention by sending in the military. Also, the president wouldn’t be too happy about that.","L'opinione pubblica non è a conoscenza di questo sito, non possiamo pertanto di attirare i media utilizzando l'esercito inoltre il presidente non sarebbe molto felice."
-1_INIT_5,"Your task is to recover the fragment yourself. Afterward, we’ll ensure you have a safe way out.","Il tuo compito sarà recupare tu stesso il frammento, successivamente ti garantiremo una via di uscita sicura."
+1_INIT_2,Perfect. You've made it to the lab—your mission starts now. Let's go over the objective one last time: you’ve been chosen to infiltrate MK Corp’s laboratory. The facility has been taken over by terrorists.,"Perfetto. Sei arrivata nel laboratorio, la tua missione inizia ora. Ricapitoliamo per l'ultima volta l'obbiettivo: sei stata scelta per infiltrarti nel laboratorio della MK Corp. Il laboratorio è stato occupato da terroristi,"
+1_INIT_3,They managed to eliminate the military personnel guarding the site and seize control. The terrorists’ target is the HED meteorite fragment stored in the heart of the lab.,sono riusciti ad eliminare i militari a guardia e a occuparlo. L'obbiettivo dei terroristi è il frammento del meteorite HED custodito nel cuore del laboratorio.
+1_INIT_4,"The public isn't aware of this location, so we can't risk attracting media attention by sending in the military. Also, the president wouldn’t be too happy about that.","L'opinione pubblica non è a conoscenza di questo sito, non possiamo pertanto attirare i media utilizzando l'esercito inoltre il presidente non sarebbe molto felice."
+1_INIT_5,"Your task is to recover the fragment yourself. Afterward, we’ll ensure you have a safe way out.","Il tuo compito sarà recupare tu stessa il frammento, successivamente ti garantiremo una via di uscita sicura."
 1_INIT_6,Don’t let the enemies spot you—use your powers if necessary.,"Non farti scoprire dai nemici, usa i tuoi poteri se necessario."
 1_INIT_7,"One last thing. Since this is your first mission in a while, maybe we should go over your powers again?","Un'ultima cosa. Visto che è la tua prima missione dopo tanto, non dovremmo ripassare i tuoi poteri?"
-1_INIT_8,Use 'F' to scan the surrounding area for lifeforms or useful objects.,"Usa \""F\"" per scansionare l'area circostante in cerca di forme di vita oggetti che potrebbero essere utili."
+1_INIT_8,Use 'F' to scan the surrounding area for lifeforms or useful objects.,"Usa \""F\"" per scansionare l'area circostante in cerca di forme di vita o oggetti che potrebbero essere utili."
 1_INIT_9,"With the left mouse button, aim at a scanned object to pick it up. Hold and release the left button to throw it.","con il tasto sinistro del mouse punta un oggetto scansionato per raccoglierlo, tieni premuto il tasto sinistro e rilascialo per lanciare tale oggetto,"
 1_INIT_10,You could even stun someone by hitting them. Remember to take advantage of blind spots in the environment by crouching with 'CTRL'.,"potresti addirittura stordire qualcuno colpendolo. Ricordati di sfruttare tutti i punti ciechi dell'ambiente accovacciandoti con \""CTRL\""."
 1_INIT_11,"You can contact me anytime via radio using the 'R' key, or take a break with the 'P' key.","Puoi contattarmi in qualsiasi momento con la radio attraverso il tasto \""R\"", oppure prenditi una pausa con il tasto \""P\""."
@@ -64,7 +64,7 @@ no_time,No time,Nessun tempo
 2_1K_1,This floor should be some sort of storage area.,Questo piano dovrebbe essere una sorta di magazzino.
 2_1K_2,"According to the map, the exit should be to the northeast",Secondo la planimetria l'uscita dovrebbe essere a nord est.
 2_1K_3,Keep your eyes open.,Tieni gli occhi aperti.
-2_1K_4,The exit is to the northeast—stay alert!,"L'uscità è a nord est, non abbassare la guardia!"
+2_1K_4,The exit is to the northeast—stay alert!,"L'uscita è a nord est, non abbassare la guardia!"
 2_1A_1,"The door should be there, no doubt about it.","La porta dovrebbe essere lì, non ci sono dubbi."
 2_1A_2,The map doesn't lie—the door is there.,"La planimetria non sbaglia, la porta è lì."
 2_1B_1,"You're doing great—after this room, the exit should be ahead.","Stai andando alla grande, dopo questa stanza dovrebbe esserci l'uscita."
@@ -98,8 +98,8 @@ no_time,No time,Nessun tempo
 3_3B_2,Stay focused and don’t get spotted!,Concentrati e non farti scoprire!
 3_3B_3,"The door is right in front of you, don’t waste time!","La porta è davanti a te, non perdere tempo!"
 intro_1,"Noveria, Confederation of Theskar,","Noveria, Confederazione di Theskar"
-intro_2,"Following the fall of a meteorite near the city, which caused the deaths of numerous people,","A seguito della caduta di meteorite caduto nei pressi della città che ha causato la morte di numerose persone,"
-intro_3,a small portion of the survivors developed extraordinary physical and mental abilities.,una piccola porzione di sopravvissuti hanno sviluppato delle capacità fische e mentali fuori dal comune.
+intro_2,"Following the fall of a meteorite near the city, which caused the deaths of numerous people,","A seguito della caduta di un meteorite caduto nei pressi della città che ha causato la morte di numerose persone,"
+intro_3,a small portion of the survivors developed extraordinary physical and mental abilities.,una piccola porzione di sopravvissuti ha sviluppato delle capacità fische e mentali fuori dal comune.
 intro_4,"These mutations, highly unpredictable, have also emerged years after the event.","Tali mutazioni, altamente imprevedibili, sono emerse anche dopo alcuni anni dall'evento."
-intro_5,The government and TARS (Theskar Agency for Research and Science) continue to study how to manipulate,
-intro_6,the meteorite fragments in order to gain an advantage.,i frammenti di meteoriete al fine di trarne un vantaggio.
+intro_5,The government and TARS (Theskar Agency for Research and Science) continue to study how to manipulate,Il governo e l'agezia TARS (Theskar Agency for Research and Science) continuano a studiare un modo per manipolare 
+intro_6,the meteorite fragments in order to gain an advantage.,i frammenti di meteorite al fine di trarne un vantaggio.
