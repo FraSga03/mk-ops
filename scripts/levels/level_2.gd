@@ -75,8 +75,8 @@ func set_enemy_path():
 	];
 	
 	enemy_path_1.checkpoints = [
-		{ "progress": 0.22, "has_passed": false, "turn_range": 1.4 },
-		{ "progress": 0.64, "has_passed": false, "turn_range": 1.5 },
+		{ "progress": 0.15, "has_passed": false, "turn_range": 1.3 },
+		{ "progress": 0.62, "has_passed": false, "turn_range": 1.2 },
 	];
 	
 	enemy_path_2.checkpoints = [
@@ -97,16 +97,16 @@ func set_enemy_path():
 		{ "progress": 0.96, "has_passed": false, "turn_range": 1.4 },
 	];
 
-func _on_area_f1a_entered(body: Node3D) -> void:
+func _on_area_f1a_entered(_body: Node3D) -> void:
 	dialogue_key = "floor_1_a";
 
-func _on_area_f1b_entered(body: Node3D) -> void:
+func _on_area_f1b_entered(_body: Node3D) -> void:
 	dialogue_key = "floor_1_b";
 	
-func _on_area_f1c_entered(body: Node3D) -> void:
+func _on_area_f1c_entered(_body: Node3D) -> void:
 	dialogue_key = "floor_1_c";
 
-func _on_area_f1d_entered(body: Node3D) -> void:
+func _on_area_f1d_entered(_body: Node3D) -> void:
 	dialogue_key = "floor_1_d";
 
 func update_progress_bar_color(body: Node3D) -> void:
@@ -123,4 +123,4 @@ func update_progress_bar_color(body: Node3D) -> void:
 
 func get_bodies_in_control_area():
 	var bodies = exit_area_control.get_overlapping_bodies();
-	return bodies.filter(func (el): el.is_in_group("Warehouse"));
+	return bodies.filter(func (el): return  el.is_in_group("Warehouse"));

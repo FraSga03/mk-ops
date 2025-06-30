@@ -10,10 +10,13 @@ config_version=5
 
 [application]
 
-config/name="exam"
+config/name="MKOPS"
 config/version="1.0"
-run/main_scene="uid://bpdr8pcpp5qg"
+run/main_scene="uid://hnw0g1o6slft"
 config/features=PackedStringArray("4.4", "Mobile")
+boot_splash/image="uid://brkmp2bwl0c3v"
+config/macos_native_icon="res://assets/logo/icon.ico"
+config/windows_native_icon="res://assets/logo/icon.ico"
 
 [autoload]
 

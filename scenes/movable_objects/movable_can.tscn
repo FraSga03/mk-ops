@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ku16cxy8qd7l" path="res://scenes/movable_objects/movable_obj.tscn" id="1_g8anf"]
 [ext_resource type="Texture2D" uid="uid://3p75pyhghw3h" path="res://assets/textures/Green/texture_11.png" id="2_151cx"]
 [ext_resource type="Script" uid="uid://b8sff1av8c3yt" path="res://scripts/movable_objects/movable_can.gd" id="2_mj0xx"]
-[ext_resource type="Shader" uid="uid://dmear5oe780e3" path="res://scenes/movable_objects/movable_box.gdshader" id="4_6uhkn"]
+[ext_resource type="Shader" uid="uid://dmear5oe780e3" path="res://scenes/movable_objects/movable_obj.gdshader" id="4_6uhkn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_151cx"]
 size = Vector3(0.35, 0.35, 0.35)

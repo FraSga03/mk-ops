@@ -5,7 +5,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3y7k"]
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_f1q83")
-uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_scale = Vector3(0.2, 0.2, 0.2)
 uv1_triplanar = true
 
 [node name="LongWall" type="Node3D"]

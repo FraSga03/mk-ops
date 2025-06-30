@@ -41,39 +41,60 @@ var launch_power = 1:
 		launch_power = clamp(value, 1, 10)
 
 func save_time(key):
-	var previous_time = load_time(key);
-	var current_time = Time.get_unix_time_from_system() - Globals.time_pivot;
-	
+	var previous_time = load_time(key)
+	var current_time = Time.get_unix_time_from_system() - Globals.time_pivot
+
 	if previous_time != -1 and current_time > previous_time:
-		return;
-		
-	var config = ConfigFile.new()
-	config.set_value("game_time", key, Time.get_unix_time_from_system() - Globals.time_pivot)
-	config.save("user://save.cfg");
+		return
+
+	var data = _load_json("user://save.json")
+	if not data.has("game_time"):
+		data["game_time"] = {}
+
+	data["game_time"][key] = current_time
+	_save_json("user://save.json", data)
 
 func load_time(key):
-	var config = ConfigFile.new();
-	var error = config.load("user://save.cfg");
-	if error == OK:
-		var score = config.get_value("game_time", key, -1);
-		return score;
+	var data = _load_json("user://save.json")
+	if data.has("game_time") and data["game_time"].has(key):
+		return data["game_time"][key]
 	else:
-		return -1;
-		
+		return -1
+
 func load_lang():
-	var config = ConfigFile.new();
-	var error = config.load("user://save.cfg");
-	if error == OK:
-		return config.get_value("localization", "lang", "it");
+	var data = _load_json("user://save.json")
+	if data.has("localization") and data["localization"].has("lang"):
+		return data["localization"]["lang"]
 	else:
-		return "it";
-		
-func save_lang(key):		
-	if !(key in ["it", "eng"]):
-		return;
-	
-	var config = ConfigFile.new()
-	config.set_value("localization", "lang", key)
-	config.save("user://save.cfg");
-	TranslationServer.set_locale(Globals.lang);
-	
+		return "it"
+
+func save_lang(key):
+	if not key in ["it", "eng"]:
+		return
+
+	var data = _load_json("user://save.json")
+	if not data.has("localization"):
+		data["localization"] = {}
+
+	data["localization"]["lang"] = key
+	_save_json("user://save.json", data)
+	TranslationServer.set_locale(Globals.lang)
+
+func _load_json(path):
+	if not FileAccess.file_exists(path):
+		_save_json(path, {})
+
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file:
+		var content = file.get_as_text()
+		file.close()
+		var result = JSON.parse_string(content)
+		if typeof(result) == TYPE_DICTIONARY:
+			return result
+	return {}
+
+func _save_json(path, data):
+	var file = FileAccess.open(path, FileAccess.WRITE)
+	if file:
+		file.store_string(JSON.stringify(data, "\t")) # Pretty format with tabs
+		file.close()

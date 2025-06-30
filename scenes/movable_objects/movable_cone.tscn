@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://br3igf0e2hnpq"]
 
 [ext_resource type="PackedScene" uid="uid://ku16cxy8qd7l" path="res://scenes/movable_objects/movable_obj.tscn" id="1_tprvs"]
-[ext_resource type="Shader" uid="uid://dmear5oe780e3" path="res://scenes/movable_objects/movable_box.gdshader" id="2_ryfbv"]
+[ext_resource type="Shader" uid="uid://dmear5oe780e3" path="res://scenes/movable_objects/movable_obj.gdshader" id="2_ryfbv"]
 [ext_resource type="Script" uid="uid://cdocmjn3wmfbc" path="res://scripts/movable_objects/movable_cone.gd" id="2_sh3ll"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tprvs"]

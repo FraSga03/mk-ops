@@ -34,6 +34,7 @@ func animate_bg():
 func _ready() -> void:
 	$Buttons/VBoxContainer/PlayButton.grab_focus();
 	
+	Globals.save_lang(Globals.lang)
 	update_labels();
 	
 func update_labels():

@@ -22,10 +22,12 @@ func _ready() -> void:
 func set_time_label(label, key):
 	var time = Globals.load_time(key);
 	
+	print(time);
 	if time != -1:
 		time = Time.get_time_dict_from_unix_time(time);
-	
-	label.text = "%02d:%02d:%02d" % [time.hour, time.minute, time.second] if time != -1 else tr("no_time");
+		label.text = "%02d:%02d:%02d" % [time.hour, time.minute, time.second];
+	else:
+		label.text = tr("no_time");
 
 func _on_exit_button_pressed() -> void:
 	queue_free();

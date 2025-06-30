@@ -62,7 +62,7 @@ size = Vector3(37.8447, 1, 23)
 [sub_resource type="Curve3D" id="Curve3D_v6ha0"]
 closed = true
 _data = {
-"points": PackedVector3Array(1.56089, 0, 0.586661, -1.56089, 0, -0.586661, -3, 0.5, -16, -1.73562, 0, 0.216952, 1.73562, 0, -0.216952, -3.17474, 0, 4.11243, -2.06105, 0, -1.08476, 2.06105, 0, 1.08476, 19.9308, 0, 4.43786, 0.650864, 0, -0.759335, -0.650864, 0, 0.759335, 20.4731, 0, 13.4414, 1.4102, 0, -1.51867, -1.4102, 0, 1.51867, 6.26272, 0, 13.6584, -1.8441, 0, -1.19324, 1.8441, 0, 1.19324, 6.47967, 0, 19.95, -0.542381, 0, 0.65086, 0.542381, 0, -0.65086, 22.7511, 0, 20.2754, 0.759331, 0, 0.867812, -0.759331, 0, -0.867812, 22.8596, 0, 2.91919, 1.51867, 0, -0.216952, -1.51867, 0, 0.216952, -0.788253, 0, 2.91919),
+"points": PackedVector3Array(1.56089, 0, 0.586661, -1.56089, 0, -0.586661, -3, 0, -16, -1.73562, 0, 0.216952, 1.73562, 0, -0.216952, -3.17474, 0, 4.11243, -2.06105, 0, -1.08476, 2.06105, 0, 1.08476, 19.9308, 0, 4.43786, 0.650864, 0, -0.759335, -0.650864, 0, 0.759335, 20.4731, 0, 13.4414, 1.4102, 0, -1.51867, -1.4102, 0, 1.51867, 6.26272, 0, 13.6584, -1.8441, 0, -1.19324, 1.8441, 0, 1.19324, 6.47967, 0, 19.95, -0.542381, 0, 0.65086, 0.542381, 0, -0.65086, 22.7511, 0, 20.2754, 0.759331, 0, 0.867812, -0.759331, 0, -0.867812, 22.8596, 0, 2.91919, 1.51867, 0, -0.216952, -1.51867, 0, 0.216952, -0.788253, 0, 2.91919),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 9
@@ -88,7 +88,7 @@ script = ExtResource("2_dnkej")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.71651)
 
 [node name="Player" parent="." index="3"]
-transform = Transform3D(0.410305, 0, -0.911949, 0, 1, 0, 0.911949, 0, 0.410305, 18.9959, 0.7, 22.505)
+transform = Transform3D(0.410305, 0, -0.911949, 0, 1, 0, 0.911949, 0, 0.410305, 22.2505, 0.7, 18.3249)
 
 [node name="Floor1" type="Node3D" parent="Environment" index="0"]
 
@@ -112,31 +112,28 @@ transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 [node name="LongWall8" parent="Environment/Floor1/Walls" index="2" instance=ExtResource("3_x42e6")]
 transform = Transform3D(-1.31134e-08, 0, -1, 0, 1, 0, 0.3, 0, -4.37114e-08, 15, 0, 17)
 
-[node name="LongWall9" parent="Environment/Floor1/Walls" index="3" instance=ExtResource("3_x42e6")]
-transform = Transform3D(0.1, 0, 5.62513e-14, 0, 1, 0, -5.62513e-15, 0, 1, -22, 0, 0)
-
-[node name="LongWall7" parent="Environment/Floor1/Walls" index="4" instance=ExtResource("3_x42e6")]
+[node name="LongWall7" parent="Environment/Floor1/Walls" index="3" instance=ExtResource("3_x42e6")]
 transform = Transform3D(-3.49691e-08, 0, -1, 0, 1, 0, 0.8, 0, -4.37114e-08, -15, 0, 0)
 
-[node name="LongWall3" parent="Environment/Floor1/Walls" index="5" instance=ExtResource("3_x42e6")]
+[node name="LongWall3" parent="Environment/Floor1/Walls" index="4" instance=ExtResource("3_x42e6")]
 transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, -25, 0, 0)
 
-[node name="LongWall4" parent="Environment/Floor1/Walls" index="6" instance=ExtResource("3_x42e6")]
+[node name="LongWall4" parent="Environment/Floor1/Walls" index="5" instance=ExtResource("3_x42e6")]
 transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 25, 0, -4)
 
-[node name="LongWall5" parent="Environment/Floor1/Walls" index="7" instance=ExtResource("3_x42e6")]
+[node name="LongWall5" parent="Environment/Floor1/Walls" index="6" instance=ExtResource("3_x42e6")]
 transform = Transform3D(1, 0, 1.58933e-08, 0, 1, 0, -1.58933e-08, 0, 1, -4.5, 0, -25)
 
-[node name="Wall7" parent="Environment/Floor1/Walls" index="8" instance=ExtResource("5_bahl2")]
+[node name="Wall7" parent="Environment/Floor1/Walls" index="7" instance=ExtResource("5_bahl2")]
 transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 25.5, 3, 22.5)
 
-[node name="Wall8" parent="Environment/Floor1/Walls" index="9" instance=ExtResource("5_bahl2")]
+[node name="Wall8" parent="Environment/Floor1/Walls" index="8" instance=ExtResource("5_bahl2")]
 transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 25.5, -3, 22.5)
 
-[node name="Wall9" parent="Environment/Floor1/Walls" index="10" instance=ExtResource("5_bahl2")]
+[node name="Wall9" parent="Environment/Floor1/Walls" index="9" instance=ExtResource("5_bahl2")]
 transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 25.5, 0, 22.5)
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Environment/Floor1/Walls" index="11"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Environment/Floor1/Walls" index="10"]
 material_override = SubResource("StandardMaterial3D_v6ha0")
 use_collision = true
 collision_mask = 2
@@ -150,6 +147,9 @@ size = Vector3(3, 2.24323, 3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.585287, -0.85, 0)
 operation = 2
 size = Vector3(2.00732, 0.5, 1)
+
+[node name="Wall" parent="Environment/Floor1/Walls" index="11" instance=ExtResource("5_bahl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0253, 0, 0.211403)
 
 [node name="Lights" type="Node3D" parent="Environment/Floor1" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.35243, 0)
@@ -179,7 +179,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 curve = SubResource("Curve3D_bahl2")
 
 [node name="EnemyPath3" parent="Environment/Floor1/Enemies/Path3D" index="0" instance=ExtResource("6_iwr0g")]
-transform = Transform3D(-0.999499, 0, -0.0293849, 0, 0.999954, 0, 0.0293842, 0, -0.999522, 23.2982, 0, -17.3795)
+transform = Transform3D(-0.999499, 0, -0.0293849, 0, 0.999954, 0, 0.0293842, 0, -0.999521, 23.2982, 0, -17.3795)
 progress = 3.80061
 
 [node name="Path3D2" type="Path3D" parent="Environment/Floor1/Enemies" index="1"]
@@ -576,14 +576,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 curve = SubResource("Curve3D_v6ha0")
 
 [node name="EnemyPath4" parent="Environment/Floor2/Enemies/Path3D" index="0" instance=ExtResource("6_iwr0g")]
-transform = Transform3D(0.998917, 0.0220902, 0.0407048, -0.0210237, 0.99942, -0.0264449, -0.0412658, 0.0255608, 0.998811, -1.96668, 0.31268, -8.5966)
+transform = Transform3D(0.999157, 0, 0.0407625, 0, 0.999991, 0, -0.0407626, 0, 0.999157, -1.9671, 0, -8.60691)
 progress = 143.943
 
 [node name="Path3D2" type="Path3D" parent="Environment/Floor2/Enemies" index="1"]
 curve = SubResource("Curve3D_gmpev")
 
 [node name="EnemyPath5" parent="Environment/Floor2/Enemies/Path3D2" index="0" instance=ExtResource("6_iwr0g")]
-transform = Transform3D(0.998851, 7.84463e-06, -0.0475649, -7.85352e-06, 0.999983, -2.84212e-14, 0.047565, 3.73559e-07, 0.998849, -0.351224, 0, -21.4489)
+transform = Transform3D(0.99885, 7.84463e-06, -0.0475648, -7.85351e-06, 0.999983, -2.84211e-14, 0.0475649, 3.73559e-07, 0.998848, -0.351224, 0, -21.4489)
 progress = 104.49
 
 [node name="FocusAreas" type="Node3D" parent="Environment/Floor2" index="6"]

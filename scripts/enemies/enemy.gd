@@ -6,9 +6,9 @@ extends CharacterBody3D
 @onready var player_pointer: RayCast3D = $PlayerPointer
 @onready var exclamation_mark: CSGCombiner3D = $ExclamationMark
 @onready var camera_pivot: Node3D = $CameraPivot
-@onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
 @onready var detection_timer: Timer = $DetectionTimer
 @onready var hit_sound_player: AudioStreamPlayer3D = $HitSoundPlayer
+@onready var step_audio_player: AudioStreamPlayer3D = $StepAudioPlayer
 
 signal on_enemy_death;
 signal on_player_detect;
@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 		if player_pointer.is_colliding() and player_pointer.get_collider() is Node:	
 			var node_collided = player_pointer.get_collider() as Node;
 			if node_collided.is_in_group("Player"):
-				audio_stream_player_3d.stop();
+				step_audio_player.stop();
 				is_player_detected = true;
 				on_detect_player();
 
@@ -48,7 +48,7 @@ func on_detect_player():
 	look_at(detected_player.global_position);
 	on_player_detect.emit();
 
-func manage_hit(force, delta):	
+func manage_hit(_force, delta):	
 	if !stun_timer.is_stopped():
 		return;
 		

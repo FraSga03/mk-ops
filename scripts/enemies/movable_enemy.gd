@@ -20,8 +20,8 @@ func _physics_process(delta: float) -> void:
 	enemy_path.progress += delta * SPEED;
 	enemy.enemy_body.walking();
 	
-	if enemy.audio_stream_player_3d.playing:
-		enemy.audio_stream_player_3d.play();
+	if enemy.step_audio_player.playing:
+		enemy.step_audio_player.play();
 	
 	var new_progress_ratio = snapped(enemy_path.progress_ratio, 0.01);
 
