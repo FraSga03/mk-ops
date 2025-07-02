@@ -9,6 +9,20 @@ extends Level
 @onready var progress_bar: CSGBox3D = $Environment/RoomD/ExitAreaControl/ProgressBar
 
 var dialogues = {
+	"init": {
+		"character_name_text": tr("major"),
+		"dialogues": [
+			[
+				tr("2_INIT_1"),
+				tr("2_INIT_2"),
+				tr("2_INIT_3"),
+				tr("2_INIT_4"),
+				tr("2_INIT_5"),
+				tr("2_INIT_6"),
+			]
+		],
+		"dialogue_count": 0
+	},
 	"default": {
 		"character_name_text": tr("major"),
 		"dialogues": [

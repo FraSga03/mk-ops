@@ -340,7 +340,7 @@ transform = Transform3D(-0.904148, 0, 0.427155, 0, 0.999983, 0, -0.427156, 0, -0
 curve = SubResource("Curve3D_p4se4")
 
 [node name="EnemyPath" parent="Environment/RoomA/Enemies/Path3D2" index="0" instance=ExtResource("13_p4se4")]
-transform = Transform3D(0.170401, 0, 0.985358, 0, 1, 0, -0.985358, 0, 0.170401, -9.08274, 0, -5.28593)
+transform = Transform3D(0.17041, 0, 0.985356, 0, 1, 0, -0.985356, 0, 0.17041, -9.08269, 0, -5.28593)
 progress = 29.0086
 
 [node name="FocusAreas" type="Node3D" parent="Environment/RoomA" index="6"]

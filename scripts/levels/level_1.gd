@@ -7,6 +7,26 @@ extends Level
 @onready var enemy_path_5: PathFollow3D = $Environment/Floor2/Enemies/Path3D2/EnemyPath5
 
 var dialogues = {
+	"init": {
+		"character_name_text": tr("major"),
+		"dialogues": [
+			[
+				tr("1_INIT_1"),
+				tr("1_INIT_2"),
+				tr("1_INIT_3"),
+				tr("1_INIT_4"),
+				tr("1_INIT_5"),
+				tr("1_INIT_6"),
+				tr("1_INIT_7"),
+				tr("1_INIT_8"),
+				tr("1_INIT_9"),
+				tr("1_INIT_10"),
+				tr("1_INIT_11"),
+				tr("1_INIT_12"),
+			]
+		],
+		"dialogue_count": 0
+	},
 	"default": {
 		"character_name_text": tr("major"),
 		"dialogues": [
@@ -54,26 +74,6 @@ var dialogues = {
 		],
 		"dialogue_count": 0
 	},
-	"init": {
-		"character_name_text": tr("major"),
-		"dialogues": [
-			[
-				tr("1_INIT_1"),
-				tr("1_INIT_2"),
-				tr("1_INIT_3"),
-				tr("1_INIT_4"),
-				tr("1_INIT_5"),
-				tr("1_INIT_6"),
-				tr("1_INIT_7"),
-				tr("1_INIT_8"),
-				tr("1_INIT_9"),
-				tr("1_INIT_10"),
-				tr("1_INIT_11"),
-				tr("1_INIT_12"),
-			]
-		],
-		"dialogue_count": 0
-	},
 }
 
 func _init():
@@ -118,13 +118,6 @@ func _on_immovable_exit_door_on_door_entered() -> void:
 	
 	Globals.save_time("level_1");
 	Transition.change_scene("res://scenes/ui/level_completed.tscn");
-
-func after_ready():
-	call_deferred("_on_scene_ready");
-	
-func _on_scene_ready() -> void:
-	dialogue_key = "init";
-	open_radio();
 
 func _on_area_f1a_entered(_body: Node3D) -> void:
 	dialogue_key = "floor_1_a";

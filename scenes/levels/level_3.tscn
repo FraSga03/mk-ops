@@ -534,7 +534,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 curve = SubResource("Curve3D_o3ttr")
 
 [node name="EnemyPath" parent="Environment/Floor2/Enemies/Path3D2" index="0" instance=ExtResource("18_5f5xw")]
-transform = Transform3D(0.998381, 0, 0.0568168, 0, 1, 0, -0.0568168, 0, 0.998381, 11.3888, 0, -11.7179)
+transform = Transform3D(0.998381, 0, 0.0568167, 0, 1, 0, -0.0568167, 0, 0.998381, 11.3888, 0, -11.7179)
 progress = 78.9927
 
 [node name="FocusAreas" type="Node3D" parent="Environment/Floor2" index="6"]

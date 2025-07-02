@@ -8,6 +8,21 @@ extends Level
 @onready var enemy_path_5: PathFollow3D = $Environment/Floor3/Enemies/Path3D2/EnemyPath
 
 var dialogues = {
+	"init": {
+		"character_name_text": tr("major"),
+		"dialogues": [
+			[
+				tr("3_INIT_1"),
+				tr("3_INIT_2"),
+				tr("3_INIT_3"),
+				tr("3_INIT_4"),
+				tr("3_INIT_5"),
+				tr("3_INIT_6"),
+				tr("3_INIT_7"),
+			]
+		],
+		"dialogue_count": 0
+	},
 	"default": {
 		"character_name_text": tr("major"),
 		"dialogues": [

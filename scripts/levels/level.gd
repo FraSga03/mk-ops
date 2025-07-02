@@ -55,8 +55,10 @@ func _ready() -> void:
 	
 	game_ui.show_level_label(level_name)
 		
-	after_ready();
+	dialogue_key = "init";
 	Globals.time_pivot = Time.get_unix_time_from_system()
+	
+	call_deferred("open_radio")
 
 func after_ready():
 	pass;
