@@ -77,8 +77,7 @@ var dialogues = {
 }
 
 func _init():
-	super._init(tr("level_1"), dialogues);
-	Globals.current_play_scene = "res://scenes/levels/level_1.tscn"
+	super._init(tr("level_1"), dialogues, "res://scenes/levels/level_1.tscn");
 
 func set_enemy_path():
 	enemy_path_1.checkpoints =  [
@@ -104,6 +103,7 @@ func set_enemy_path():
 		{ "progress": 0.715, "has_passed": false, "turn_range": 1.3 },
 		{ "progress": 0.95, "has_passed": false, "turn_range": 1.2 },
 	];
+	
 	enemy_path_5.checkpoints = [
 		{ "progress": 0.52, "has_passed": false, "turn_range": 1.3 },
 		{ "progress": 0.97, "has_passed": false, "turn_range": 1.2 },

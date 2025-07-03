@@ -25,7 +25,7 @@
 [sub_resource type="Curve3D" id="Curve3D_5f5xw"]
 closed = true
 _data = {
-"points": PackedVector3Array(1.71895, 0, 1.71895, -1.71895, 0, -1.71895, -0.124063, 0, -21.4087, 0.66848, 0, -1.71895, -0.66848, 0, 1.71895, -20.9424, 0, -21.3132, -1.71895, 0, -0.0954952, 1.71895, 0, 0.0954952, -21.1334, 0, 4.28008, -1.52795, 0, 0.381987, 1.52795, 0, -0.381987, -13.1117, 0.5, 4.18458, -1.71895, 0, 0.763978, 1.71895, 0, -0.763978, -13.3982, 0, -15.6788, -2.38743, 0, 0, 2.38743, 0, 0, -0.124063, 0, -15.8698),
+"points": PackedVector3Array(1.71895, 0, 1.71895, -1.71895, 0, -1.71895, -0.124063, 0, -21.4087, 0.66848, 0, -1.71895, -0.66848, 0, 1.71895, -20.9424, 0, -21.3132, -1.71895, 0, -0.0954952, 1.71895, 0, 0.0954952, -21.1334, 0, 4.28008, -1.52795, 0, 0.381987, 1.52795, 0, -0.381987, -13.112, 0, 4.185, -1.71895, 0, 0.763978, 1.71895, 0, -0.763978, -13.3982, 0, -15.6788, -2.38743, 0, 0, 2.38743, 0, 0, -0.124063, 0, -15.8698),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
 point_count = 6
@@ -89,7 +89,7 @@ size = Vector3(50, 1, 11)
 script = ExtResource("2_vmg1d")
 
 [node name="Player" parent="." index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3595, 10.539, 22.9862)
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -18.3595, 10.5969, 22.9862)
 
 [node name="Floor1" type="Node3D" parent="Environment" index="0"]
 
@@ -153,14 +153,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 curve = SubResource("Curve3D_5f5xw")
 
 [node name="EnemyPath" parent="Environment/Floor1/Enemies/Path3D" index="0" instance=ExtResource("18_5f5xw")]
-transform = Transform3D(0.999077, 0.0134852, 0.040721, -0.0145161, 0.999577, 0.0251275, -0.0403649, -0.0256955, 0.998853, -13.8557, 0.0834153, -12.096)
+transform = Transform3D(0.999188, 0, 0.040168, 0, 0.999998, 0, -0.0401679, 0, 0.999191, -13.8567, 0, -12.118)
 progress = 71.5404
 
 [node name="Path3D2" type="Path3D" parent="Environment/Floor1/Enemies" index="1"]
 curve = SubResource("Curve3D_kdsi4")
 
 [node name="EnemyPath" parent="Environment/Floor1/Enemies/Path3D2" index="0" instance=ExtResource("18_5f5xw")]
-transform = Transform3D(-0.0842261, 0, -0.996442, 0, 1, 0, 0.996442, 0, -0.0842261, 1.13321, 0, 7.98056)
+transform = Transform3D(-0.0842261, 0, -0.996441, 0, 1, 0, 0.996441, 0, -0.0842261, 1.13321, 0, 7.98056)
 progress = 51.5278
 
 [node name="Environment" type="Node3D" parent="Environment/Floor1" index="4"]
@@ -236,94 +236,82 @@ transform = Transform3D(-0.846063, 0, 0.533083, 0, 1, 0, -0.533083, 0, -0.846063
 [node name="MovableChair5" parent="Environment/Floor1/MovableObjects" index="2" instance=ExtResource("15_lgrx1")]
 transform = Transform3D(0.533083, 0, 0.846063, 0, 1, 0, -0.846063, 0, 0.533083, -15.0613, 1.35, 9.96516)
 
-[node name="MovableChair7" parent="Environment/Floor1/MovableObjects" index="3" instance=ExtResource("15_lgrx1")]
-transform = Transform3D(0.038632, 0, 0.999254, 0, 1, 0, -0.999254, 0, 0.038632, -18.0613, 1.35, 9.96516)
-
-[node name="MovableChair8" parent="Environment/Floor1/MovableObjects" index="4" instance=ExtResource("15_lgrx1")]
+[node name="MovableChair8" parent="Environment/Floor1/MovableObjects" index="3" instance=ExtResource("15_lgrx1")]
 transform = Transform3D(-0.22131, 0, 0.975203, 0, 1, 0, -0.975203, 0, -0.22131, -18.0613, 1.35, 19.9652)
 
-[node name="MovableChair9" parent="Environment/Floor1/MovableObjects" index="5" instance=ExtResource("15_lgrx1")]
+[node name="MovableChair9" parent="Environment/Floor1/MovableObjects" index="4" instance=ExtResource("15_lgrx1")]
 transform = Transform3D(-0.583357, 0, 0.812216, 0, 1, 0, -0.812216, 0, -0.583357, -13.0613, 1.35, 19.9652)
 
-[node name="MovableChair6" parent="Environment/Floor1/MovableObjects" index="6" instance=ExtResource("15_lgrx1")]
+[node name="MovableChair6" parent="Environment/Floor1/MovableObjects" index="5" instance=ExtResource("15_lgrx1")]
 transform = Transform3D(0.038632, 0, 0.999254, 0, 1, 0, -0.999254, 0, 0.038632, -15.0613, 1.35, 13.775)
 
-[node name="MovableChair10" parent="Environment/Floor1/MovableObjects" index="7" instance=ExtResource("15_lgrx1")]
+[node name="MovableChair10" parent="Environment/Floor1/MovableObjects" index="6" instance=ExtResource("15_lgrx1")]
 transform = Transform3D(0.038632, 0, 0.999254, 0, 1, 0, -0.999254, 0, 0.038632, 6.93868, 1.35, 13.775)
 
-[node name="MovableChair11" parent="Environment/Floor1/MovableObjects" index="8" instance=ExtResource("15_lgrx1")]
+[node name="MovableChair11" parent="Environment/Floor1/MovableObjects" index="7" instance=ExtResource("15_lgrx1")]
 transform = Transform3D(-0.975203, 0, -0.22131, 0, 1, 0, 0.22131, 0, -0.975203, 15.9387, 1.35, 18.775)
 
-[node name="MovableChair12" parent="Environment/Floor1/MovableObjects" index="9" instance=ExtResource("15_lgrx1")]
+[node name="MovableChair12" parent="Environment/Floor1/MovableObjects" index="8" instance=ExtResource("15_lgrx1")]
 transform = Transform3D(0.846063, 0, -0.533083, 0, 1, 0, 0.533083, 0, 0.846063, 15.9387, 1.35, 9.775)
 
-[node name="MovableChair3" parent="Environment/Floor1/MovableObjects" index="10" instance=ExtResource("15_lgrx1")]
+[node name="MovableChair3" parent="Environment/Floor1/MovableObjects" index="9" instance=ExtResource("15_lgrx1")]
 transform = Transform3D(-0.22131, 0, 0.975203, 0, 1, 0, -0.975203, 0, -0.22131, 16.9387, 1.35, -5.225)
 
-[node name="MovableChair4" parent="Environment/Floor1/MovableObjects" index="11" instance=ExtResource("15_lgrx1")]
+[node name="MovableChair4" parent="Environment/Floor1/MovableObjects" index="10" instance=ExtResource("15_lgrx1")]
 transform = Transform3D(0.22131, 0, -0.975204, 0, 1, 0, 0.975204, 0, 0.22131, 20.9387, 1.35, -9.225)
 
-[node name="MovableObject" parent="Environment/Floor1/MovableObjects" index="12" instance=ExtResource("14_josfm")]
+[node name="MovableObject" parent="Environment/Floor1/MovableObjects" index="11" instance=ExtResource("14_josfm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32955, 2, -3.73131)
 
-[node name="MovableObject2" parent="Environment/Floor1/MovableObjects" index="13" instance=ExtResource("14_josfm")]
+[node name="MovableObject2" parent="Environment/Floor1/MovableObjects" index="12" instance=ExtResource("14_josfm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32955, 2, -2.9898)
 
-[node name="MovableObject3" parent="Environment/Floor1/MovableObjects" index="14" instance=ExtResource("14_josfm")]
+[node name="MovableObject3" parent="Environment/Floor1/MovableObjects" index="13" instance=ExtResource("14_josfm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32955, 2, -2.9898)
 
-[node name="MovableBox" parent="Environment/Floor1/MovableObjects" index="15" instance=ExtResource("13_apo5x")]
+[node name="MovableBox" parent="Environment/Floor1/MovableObjects" index="14" instance=ExtResource("13_apo5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.452, 0.9, 23.4531)
 
-[node name="MovableBox2" parent="Environment/Floor1/MovableObjects" index="16" instance=ExtResource("13_apo5x")]
+[node name="MovableBox2" parent="Environment/Floor1/MovableObjects" index="15" instance=ExtResource("13_apo5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.452, 0.9, 21.4531)
 
-[node name="MovableBox3" parent="Environment/Floor1/MovableObjects" index="17" instance=ExtResource("13_apo5x")]
+[node name="MovableBox3" parent="Environment/Floor1/MovableObjects" index="16" instance=ExtResource("13_apo5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.452, 0.9, 22.5931)
 
-[node name="MovableBox5" parent="Environment/Floor1/MovableObjects" index="18" instance=ExtResource("13_apo5x")]
+[node name="MovableBox5" parent="Environment/Floor1/MovableObjects" index="17" instance=ExtResource("13_apo5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.452, 0.9, -9.40694)
 
-[node name="MovableBox6" parent="Environment/Floor1/MovableObjects" index="19" instance=ExtResource("13_apo5x")]
+[node name="MovableBox6" parent="Environment/Floor1/MovableObjects" index="18" instance=ExtResource("13_apo5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.452, 0.9, -11.4069)
 
-[node name="MovableBox7" parent="Environment/Floor1/MovableObjects" index="20" instance=ExtResource("13_apo5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.452, 0.9, -10.831)
-
-[node name="MovableBox4" parent="Environment/Floor1/MovableObjects" index="21" instance=ExtResource("13_apo5x")]
+[node name="MovableBox4" parent="Environment/Floor1/MovableObjects" index="19" instance=ExtResource("13_apo5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.452, 0.9, 23.5931)
 
-[node name="MovableObject4" parent="Environment/Floor1/MovableObjects" index="22" instance=ExtResource("15_fhpes")]
+[node name="MovableObject4" parent="Environment/Floor1/MovableObjects" index="20" instance=ExtResource("15_fhpes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 12.067)
 
-[node name="MovableObject5" parent="Environment/Floor1/MovableObjects" index="23" instance=ExtResource("15_fhpes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 14.067)
-
-[node name="MovableObject6" parent="Environment/Floor1/MovableObjects" index="24" instance=ExtResource("15_fhpes")]
+[node name="MovableObject6" parent="Environment/Floor1/MovableObjects" index="21" instance=ExtResource("15_fhpes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 16.067)
 
-[node name="MovableObject7" parent="Environment/Floor1/MovableObjects" index="25" instance=ExtResource("15_fhpes")]
+[node name="MovableObject7" parent="Environment/Floor1/MovableObjects" index="22" instance=ExtResource("15_fhpes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, 16.067)
 
-[node name="MovableObject8" parent="Environment/Floor1/MovableObjects" index="26" instance=ExtResource("15_fhpes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 2, 16.067)
-
-[node name="MovableObject9" parent="Environment/Floor1/MovableObjects" index="27" instance=ExtResource("15_fhpes")]
+[node name="MovableObject9" parent="Environment/Floor1/MovableObjects" index="23" instance=ExtResource("15_fhpes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 2, 11.067)
 
-[node name="MovableObject10" parent="Environment/Floor1/MovableObjects" index="28" instance=ExtResource("15_fhpes")]
+[node name="MovableObject10" parent="Environment/Floor1/MovableObjects" index="24" instance=ExtResource("15_fhpes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4987, 2, 13.067)
 
-[node name="MovableAmpoul" parent="Environment/Floor1/MovableObjects" index="29" instance=ExtResource("15_fhpes")]
+[node name="MovableAmpoul" parent="Environment/Floor1/MovableObjects" index="25" instance=ExtResource("15_fhpes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.788, 2, -5.152)
 
-[node name="MovableAmpoul2" parent="Environment/Floor1/MovableObjects" index="30" instance=ExtResource("15_fhpes")]
+[node name="MovableAmpoul2" parent="Environment/Floor1/MovableObjects" index="26" instance=ExtResource("15_fhpes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.788, 2, -9.152)
 
-[node name="MovableAmpoul3" parent="Environment/Floor1/MovableObjects" index="31" instance=ExtResource("15_fhpes")]
+[node name="MovableAmpoul3" parent="Environment/Floor1/MovableObjects" index="27" instance=ExtResource("15_fhpes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.788, 2, -8.49972)
 
-[node name="MovableAmpoul4" parent="Environment/Floor1/MovableObjects" index="32" instance=ExtResource("15_fhpes")]
+[node name="MovableAmpoul4" parent="Environment/Floor1/MovableObjects" index="28" instance=ExtResource("15_fhpes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.788, 2, -6.44178)
 
 [node name="FocusAreas" type="Node3D" parent="Environment/Floor1" index="6"]
@@ -410,55 +398,52 @@ transform = Transform3D(-5.96046e-08, 0, -1, 0, 1, 0, 1, 0, -5.96046e-08, 17.208
 [node name="ImmovableDivider6" parent="Environment/Floor2/Environment" index="5" instance=ExtResource("6_fkk1g")]
 transform = Transform3D(1, 0, -1.58933e-08, 0, 1, 0, 1.58933e-08, 0, 1, -4.00435, 1.25, -17)
 
-[node name="ImmovableDivider7" parent="Environment/Floor2/Environment" index="6" instance=ExtResource("6_fkk1g")]
-transform = Transform3D(1, 0, -1.58933e-08, 0, 1, 0, 1.58933e-08, 0, 1, 0.995646, 1.25, -17)
-
-[node name="ImmovableDivider4" parent="Environment/Floor2/Environment" index="7" instance=ExtResource("6_fkk1g")]
+[node name="ImmovableDivider4" parent="Environment/Floor2/Environment" index="6" instance=ExtResource("6_fkk1g")]
 transform = Transform3D(1, 0, -1.58933e-08, 0, 1, 0, 1.58933e-08, 0, 1, -10.1252, 1.25, -6)
 
-[node name="ImmovableDispenser" parent="Environment/Floor2/Environment" index="8" instance=ExtResource("7_ugcn1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.39765, 0, -3.69781)
+[node name="ImmovableDispenser" parent="Environment/Floor2/Environment" index="7" instance=ExtResource("7_ugcn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.398, 1, -3.698)
 
-[node name="ImmovableTable" parent="Environment/Floor2/Environment" index="9" instance=ExtResource("8_2bnyt")]
+[node name="ImmovableTable" parent="Environment/Floor2/Environment" index="8" instance=ExtResource("8_2bnyt")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.75, 1.8, -16.3851)
 
-[node name="ImmovablePrinter" parent="Environment/Floor2/Environment" index="10" instance=ExtResource("9_n6eey")]
+[node name="ImmovablePrinter" parent="Environment/Floor2/Environment" index="9" instance=ExtResource("9_n6eey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.58, 1.15, 9.64901)
 
-[node name="ImmovablePrinter2" parent="Environment/Floor2/Environment" index="11" instance=ExtResource("9_n6eey")]
+[node name="ImmovablePrinter2" parent="Environment/Floor2/Environment" index="10" instance=ExtResource("9_n6eey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.58, 1.15, 9.64901)
 
-[node name="ImmovablePrinter3" parent="Environment/Floor2/Environment" index="12" instance=ExtResource("9_n6eey")]
+[node name="ImmovablePrinter3" parent="Environment/Floor2/Environment" index="11" instance=ExtResource("9_n6eey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.42, 1.15, 22.649)
 
-[node name="ImmovablePrinter4" parent="Environment/Floor2/Environment" index="13" instance=ExtResource("9_n6eey")]
+[node name="ImmovablePrinter4" parent="Environment/Floor2/Environment" index="12" instance=ExtResource("9_n6eey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.42, 1.15, 22.649)
 
-[node name="ImmovableWardrobe" parent="Environment/Floor2/Environment" index="14" instance=ExtResource("10_n6eey")]
+[node name="ImmovableWardrobe" parent="Environment/Floor2/Environment" index="13" instance=ExtResource("10_n6eey")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2, 5.90013)
 
-[node name="ImmovableWardrobe5" parent="Environment/Floor2/Environment" index="15" instance=ExtResource("10_n6eey")]
+[node name="ImmovableWardrobe5" parent="Environment/Floor2/Environment" index="14" instance=ExtResource("10_n6eey")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 2, 19.9001)
 
-[node name="ImmovableWardrobe2" parent="Environment/Floor2/Environment" index="16" instance=ExtResource("10_n6eey")]
+[node name="ImmovableWardrobe2" parent="Environment/Floor2/Environment" index="15" instance=ExtResource("10_n6eey")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3, 2, 5.90013)
 
-[node name="ImmovableWardrobe3" parent="Environment/Floor2/Environment" index="17" instance=ExtResource("10_n6eey")]
+[node name="ImmovableWardrobe3" parent="Environment/Floor2/Environment" index="16" instance=ExtResource("10_n6eey")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6, 2, 5.90013)
 
-[node name="ImmovableWardrobe4" parent="Environment/Floor2/Environment" index="18" instance=ExtResource("10_n6eey")]
+[node name="ImmovableWardrobe4" parent="Environment/Floor2/Environment" index="17" instance=ExtResource("10_n6eey")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9, 2, 5.90013)
 
-[node name="ImmovableTable2" parent="Environment/Floor2/Environment" index="19" instance=ExtResource("11_qi5uv")]
+[node name="ImmovableTable2" parent="Environment/Floor2/Environment" index="18" instance=ExtResource("11_qi5uv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.7, 0)
 
-[node name="ImmovableTable3" parent="Environment/Floor2/Environment" index="20" instance=ExtResource("11_qi5uv")]
+[node name="ImmovableTable3" parent="Environment/Floor2/Environment" index="19" instance=ExtResource("11_qi5uv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.7, -10)
 
-[node name="ImmovableTable4" parent="Environment/Floor2/Environment" index="21" instance=ExtResource("11_qi5uv")]
+[node name="ImmovableTable4" parent="Environment/Floor2/Environment" index="20" instance=ExtResource("11_qi5uv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, -5)
 
-[node name="ImmovableExitDoor" parent="Environment/Floor2/Environment" index="22" instance=ExtResource("19_1nwmf")]
+[node name="ImmovableExitDoor" parent="Environment/Floor2/Environment" index="21" instance=ExtResource("19_1nwmf")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 2, 24.4181)
 
 [node name="MovableObjects" type="Node3D" parent="Environment/Floor2" index="4"]
@@ -521,20 +506,20 @@ transform = Transform3D(-0.918578, 0, 0.395241, 0, 1, 0, -0.395241, 0, -0.918578
 transform = Transform3D(0.784982, 0, -0.619519, 0, 1, 0, 0.619519, 0, 0.784982, 11.1027, 1.35, -2.958)
 
 [node name="Enemies" type="Node3D" parent="Environment/Floor2" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Path3D" type="Path3D" parent="Environment/Floor2/Enemies" index="0"]
 curve = SubResource("Curve3D_1nwmf")
 
 [node name="EnemyPath" parent="Environment/Floor2/Enemies/Path3D" index="0" instance=ExtResource("18_5f5xw")]
-transform = Transform3D(-0.0173418, 0, -0.999848, 0, 1, 0, 0.999848, 0, -0.0173418, 4.74969, 0, -19.8412)
-progress = 69.0061
+transform = Transform3D(-0.0166619, 0, 0.999857, 0, 1, 0, -0.999857, 0, -0.0166619, -9.72764, 0, -23.1666)
+progress = 26.7257
 
 [node name="Path3D2" type="Path3D" parent="Environment/Floor2/Enemies" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 curve = SubResource("Curve3D_o3ttr")
 
 [node name="EnemyPath" parent="Environment/Floor2/Enemies/Path3D2" index="0" instance=ExtResource("18_5f5xw")]
-transform = Transform3D(0.998381, 0, 0.0568167, 0, 1, 0, -0.0568167, 0, 0.998381, 11.3888, 0, -11.7179)
+transform = Transform3D(0.998378, 0, 0.0568166, 0, 1, 0, -0.0568166, 0, 0.998378, 11.3888, 0, -11.7179)
 progress = 78.9927
 
 [node name="FocusAreas" type="Node3D" parent="Environment/Floor2" index="6"]
@@ -697,46 +682,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6874, 0.9, -8.23837)
 [node name="MovableBox4" parent="Environment/Floor3/MovableObjects" index="3" instance=ExtResource("13_apo5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6874, 0.9, -5.23837)
 
-[node name="MovableBox6" parent="Environment/Floor3/MovableObjects" index="4" instance=ExtResource("13_apo5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6874, 0.9, 16.7869)
+[node name="MovableBox8" parent="Environment/Floor3/MovableObjects" index="4" instance=ExtResource("13_apo5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7445, 0.9, 18.7869)
 
-[node name="MovableBox7" parent="Environment/Floor3/MovableObjects" index="5" instance=ExtResource("13_apo5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6874, 0.9, 16.7869)
-
-[node name="MovableBox8" parent="Environment/Floor3/MovableObjects" index="6" instance=ExtResource("13_apo5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6874, 0.9, 18.7869)
-
-[node name="MovableBox9" parent="Environment/Floor3/MovableObjects" index="7" instance=ExtResource("13_apo5x")]
+[node name="MovableBox9" parent="Environment/Floor3/MovableObjects" index="5" instance=ExtResource("13_apo5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6874, 0.9, 20.7869)
 
-[node name="MovableBox5" parent="Environment/Floor3/MovableObjects" index="8" instance=ExtResource("13_apo5x")]
+[node name="MovableBox5" parent="Environment/Floor3/MovableObjects" index="6" instance=ExtResource("13_apo5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6874, 0.9, -5.23837)
 
-[node name="MovableObject" parent="Environment/Floor3/MovableObjects" index="9" instance=ExtResource("14_josfm")]
+[node name="MovableObject" parent="Environment/Floor3/MovableObjects" index="7" instance=ExtResource("14_josfm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.7, -14.284)
 
-[node name="MovableObject2" parent="Environment/Floor3/MovableObjects" index="10" instance=ExtResource("14_josfm")]
+[node name="MovableObject2" parent="Environment/Floor3/MovableObjects" index="8" instance=ExtResource("14_josfm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.7, -16.284)
 
-[node name="MovableObject3" parent="Environment/Floor3/MovableObjects" index="11" instance=ExtResource("14_josfm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0.7, -15.404)
-
-[node name="MovableObject4" parent="Environment/Floor3/MovableObjects" index="12" instance=ExtResource("14_josfm")]
+[node name="MovableObject4" parent="Environment/Floor3/MovableObjects" index="9" instance=ExtResource("14_josfm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0.7, -13.284)
 
-[node name="MovableObject5" parent="Environment/Floor3/MovableObjects" index="13" instance=ExtResource("14_josfm")]
+[node name="MovableObject5" parent="Environment/Floor3/MovableObjects" index="10" instance=ExtResource("14_josfm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0.7, -13.284)
 
-[node name="MovableChair" parent="Environment/Floor3/MovableObjects" index="14" instance=ExtResource("15_lgrx1")]
+[node name="MovableChair" parent="Environment/Floor3/MovableObjects" index="11" instance=ExtResource("15_lgrx1")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 11.217, 1.4, 2)
 
-[node name="MovableChair4" parent="Environment/Floor3/MovableObjects" index="15" instance=ExtResource("15_lgrx1")]
+[node name="MovableChair4" parent="Environment/Floor3/MovableObjects" index="12" instance=ExtResource("15_lgrx1")]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 14.217, 1.4, 2)
 
-[node name="MovableChair2" parent="Environment/Floor3/MovableObjects" index="16" instance=ExtResource("15_lgrx1")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 9.217, 1.4, 4)
-
-[node name="MovableChair3" parent="Environment/Floor3/MovableObjects" index="17" instance=ExtResource("15_lgrx1")]
+[node name="MovableChair3" parent="Environment/Floor3/MovableObjects" index="13" instance=ExtResource("15_lgrx1")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 16.217, 1.4, 4)
 
 [node name="FoucsAreas" type="Node3D" parent="Environment/Floor3" index="6"]
@@ -758,7 +731,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 976.13, 19.5)
 shape = SubResource("BoxShape3D_o3ttr")
 
 [node name="Elevator" parent="." index="5" instance=ExtResource("6_2bnyt")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 22.5, 8.5, -26.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 22.5, 8.5, -27)
 
 [connection signal="body_entered" from="Environment/Floor1/FocusAreas/Area3D" to="." method="_on_area_f1a_entered"]
 [connection signal="body_exited" from="Environment/Floor1/FocusAreas/Area3D" to="." method="_on_area_exited"]

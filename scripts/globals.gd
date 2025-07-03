@@ -20,6 +20,7 @@ var next_scene_info = {
 	"new_time": 40000
 }
 
+var is_game_over = false;
 var current_play_scene = null;
 var is_recovering_stamina = false;
 var stamina = MAX_STAMINA:

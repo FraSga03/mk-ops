@@ -7,7 +7,6 @@ class_name Level
 var RADIO = preload("res://scenes/ui/radio.tscn");
 var PAUSE_MENU = preload("res://scenes/ui/pause_menu.tscn");
 
-var is_game_over = false;
 var scripts = {
 	"default": {
 		"character_name_text": "UOMO",
@@ -21,19 +20,24 @@ var scripts = {
 var dialogue_key = null;
 var level_name;
 
-func _init(name_l, sc):
+func _init(name_l, sc, scene_path):
 	self.level_name = name_l;
 	self.scripts = sc;
+	Globals.current_play_scene = scene_path;
+
 
 func _input(event: InputEvent) -> void:	
-	if event is InputEventKey and !is_game_over:
+	if event is InputEventKey and not Globals.is_game_over:
 		if Input.is_action_pressed("pause"):
 			on_pause();
 		if Input.is_action_pressed("radio"):
 			open_radio();
 
 func _game_over(e):
-	is_game_over = true;
+	if Globals.is_game_over:
+		return;
+	
+	Globals.is_game_over = true;
 	player.is_freezed = true;
 	var tween = create_tween();
 	tween.parallel().tween_property(player.camera_pivot, "global_position", e.camera_pivot.global_position, 0.5);
@@ -42,8 +46,8 @@ func _game_over(e):
 	await get_tree().create_timer(2).timeout;
 	Transition.change_scene("res://scenes/ui/game_over.tscn")
 
-
 func _ready() -> void:
+	Globals.is_game_over = false;
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
 	Globals.on_resume.connect(resume_game);
 	
@@ -52,16 +56,12 @@ func _ready() -> void:
 	var enemies = get_tree().get_nodes_in_group("Enemy")
 	for enemy in enemies:
 		enemy.on_player_detect.connect(_game_over.bind(enemy))
-	
-	game_ui.show_level_label(level_name)
 		
 	dialogue_key = "init";
 	Globals.time_pivot = Time.get_unix_time_from_system()
 	
 	call_deferred("open_radio")
-
-func after_ready():
-	pass;
+	game_ui.show_level_label(level_name)
 
 func set_enemy_path():
 	pass;

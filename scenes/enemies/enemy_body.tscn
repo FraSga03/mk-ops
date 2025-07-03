@@ -45,7 +45,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_h7oiw"]
 resource_name = "make_visible"
 length = 8.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -81,9 +80,8 @@ _data = {
 albedo_color = Color(0.43134, 0.43134, 0.43134, 1)
 metallic = 0.25
 
-[sub_resource type="Animation" id="Animation_auaqx"]
-resource_name = "idle"
-length = 3.0
+[sub_resource type="Animation" id="Animation_sgdup"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -109,8 +107,37 @@ tracks/1/keys = {
 "values": [Vector3(-0.259494, -3.02682, -0.0295716)]
 }
 
-[sub_resource type="Animation" id="Animation_sgdup"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_8okdi"]
+resource_name = "aiming"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RifleContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.120392, 1.34742, 0.209272)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RifleContainer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.00487892, -2.96416, -0.000874875)]
+}
+
+[sub_resource type="Animation" id="Animation_auaqx"]
+resource_name = "idle"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -162,34 +189,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-0.463962, -2.37372, -0.283296)]
-}
-
-[sub_resource type="Animation" id="Animation_8okdi"]
-resource_name = "aiming"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RifleContainer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.120392, 1.34742, 0.209272)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("RifleContainer:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.00487892, -2.96416, -0.000874875)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sgdup"]
@@ -324,7 +323,7 @@ libraries = {
 }
 
 [node name="RifleContainer" type="CSGCombiner3D" parent="." index="3"]
-transform = Transform3D(-0.993855, -1.49012e-08, -0.110688, -0.0285773, 0.966098, 0.256592, 0.106936, 0.258179, -0.960161, -0.188672, 1.15168, 0.209272)
+transform = Transform3D(-0.993855, -5.17816e-07, -0.110687, -0.0285774, 0.966098, 0.256592, 0.106934, 0.258178, -0.960161, -0.188672, 1.15168, 0.209272)
 material_override = SubResource("StandardMaterial3D_auaqx")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="RifleContainer" index="0"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cnr86rj21i7xv"]
+[gd_scene load_steps=8 format=3 uid="uid://cnr86rj21i7xv"]
 
 [ext_resource type="FontFile" uid="uid://c5bjrlrg78x6n" path="res://assets/fonts/Michroma-Regular.ttf" id="1_fu4wh"]
 [ext_resource type="Script" uid="uid://c0fsd1wdxu25k" path="res://scripts/ui/game_over.gd" id="2_fu4wh"]
@@ -8,7 +8,7 @@
 default_font = ExtResource("1_fu4wh")
 default_font_size = 30
 
-[sub_resource type="Animation" id="Animation_o6b8n"]
+[sub_resource type="Animation" id="Animation_vfrx6"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -20,36 +20,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.0431373, 0.0470588, 0.0627451, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Background2:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1152, 648)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Background2:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
+"values": [Color(0.498039, 0, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_vfrx6"]
+[sub_resource type="Animation" id="Animation_x6o8e"]
 resource_name = "change_bg"
-length = 8.0
+length = 10.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -58,105 +34,16 @@ tracks/0/path = NodePath("Background:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(0.498039, 0, 1, 1), Color(0.0431373, 0.0470588, 0.0627451, 1)]
+"values": [Color(0.498039, 0, 1, 1), Color(0.545098, 0.117647, 0.231373, 1), Color(0.498039, 0, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_fu4wh"]
-resource_name = "show_content"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background2:size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1152, 648), Vector2(1152, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Background2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 648)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4583b"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o6b8n"]
 _data = {
-&"RESET": SubResource("Animation_o6b8n"),
-&"change_bg": SubResource("Animation_vfrx6"),
-&"show_content": SubResource("Animation_fu4wh")
-}
-
-[sub_resource type="Animation" id="Animation_4583b"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background2:size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1152, 648)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Background2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_x6o8e"]
-resource_name = "show_content"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background2:size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1152, 648), Vector2(1152, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Background2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 648)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b6337"]
-_data = {
-&"RESET": SubResource("Animation_4583b"),
-&"show_content": SubResource("Animation_x6o8e")
+&"RESET": SubResource("Animation_vfrx6"),
+&"change_bg": SubResource("Animation_x6o8e")
 }
 
 [node name="GameOver" type="Control"]
@@ -176,28 +63,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0431373, 0.0470588, 0.0627451, 1)
-
-[node name="Background2" type="ColorRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0431373, 0.0470588, 0.0627451, 1)
-
-[node name="AnimationPlayerBG" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_4583b")
-}
-autoplay = "change_bg"
-
-[node name="AnimationPlayerShowContent" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_b6337")
-}
+color = Color(0.498039, 0, 1, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -244,6 +110,12 @@ text = "ESCI
 stream = ExtResource("3_x6o8e")
 autoplay = true
 parameters/looping = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o6b8n")
+}
+autoplay = "change_bg"
 
 [connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

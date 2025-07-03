@@ -1,17 +1,12 @@
 extends Control
 
-@onready var animation_player_bg: AnimationPlayer = $AnimationPlayerBG
-@onready var animation_player_show_content: AnimationPlayer = $AnimationPlayerShowContent
 @onready var resume_button: Button = $VBoxContainer/MarginContainer/VBoxContainer/ResumeButton
 @onready var exit_button: Button = $VBoxContainer/MarginContainer/VBoxContainer/ExitButton
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE;
-	animation_player_show_content.play("show_content");
 	
-	animation_player_bg.play("change_bg");
-	
-	resume_button.text = tr("next");
+	resume_button.text = tr("try_again");
 	exit_button.text = tr("exit");
 
 func _on_resume_button_pressed() -> void:

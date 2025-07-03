@@ -29,7 +29,7 @@ func _on_play_level_1() -> void:
 	Transition.change_scene("res://scenes/ui/intro.tscn", queue_free);
 	
 func _on_play_level_2() -> void:
-	Transition.change_scene("res://scenes/levels/level_2.tscn");
+	Transition.change_scene("res://scenes/levels/level_2.tscn", queue_free);
 	
 func _on_play_level_3() -> void:
-	Transition.change_scene("res://scenes/levels/level_3.tscn")
+	Transition.change_scene("res://scenes/levels/level_3.tscn", queue_free)

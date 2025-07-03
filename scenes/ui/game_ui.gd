@@ -15,6 +15,7 @@ func _ready() -> void:
 	
 	time_title_label.text = tr("time");
 
+
 func _process(_delta: float) -> void:
 	power_progress.value = Globals.launch_power;
 	
@@ -35,7 +36,8 @@ func show_level_label(level_name: String):
 	level_label.text = level_name;
 	var tween = create_tween();
 	tween.tween_property(level_label_control, "position:x", 0, 0.8);
-	await get_tree().create_timer(4).timeout;
+	
+	await get_tree().create_timer(7).timeout;
 	
 	var tween_b = create_tween();
 	tween_b.tween_property(level_label_control, "modulate", Color.html("ffffff00"), 0.5);

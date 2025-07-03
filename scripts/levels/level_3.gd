@@ -74,7 +74,7 @@ var dialogues = {
 }
 
 func _init():
-	super._init(tr("level_3"), dialogues)
+	super._init(tr("level_3"), dialogues, "res://scenes/levels/level_3.tscn")
 
 func _on_immovable_exit_door_on_door_entered() -> void:
 	Globals.next_scene_info = {

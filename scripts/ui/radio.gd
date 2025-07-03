@@ -16,7 +16,7 @@ var to_read_chars = [];
 const SPEED = 0.01;
 	
 func _ready() -> void:
-	radio_talking_sound.play();
+	radio_toggle_sound.play();
 	character_name.add_text(character_name_text);
 	
 	close_button.text = tr("close");
@@ -51,8 +51,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func _on_go_on_button_pressed() -> void:
 	index += 1;
 	if index >= len(dialogue):
-		radio_toggle_sound.play();
-		animation_player.play("hide");
+		_on_close_button_pressed()
 	else:
 		read_text();
 

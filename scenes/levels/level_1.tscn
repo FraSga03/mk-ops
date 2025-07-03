@@ -179,7 +179,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 curve = SubResource("Curve3D_bahl2")
 
 [node name="EnemyPath3" parent="Environment/Floor1/Enemies/Path3D" index="0" instance=ExtResource("6_iwr0g")]
-transform = Transform3D(-0.999499, 0, -0.0293849, 0, 0.999954, 0, 0.0293842, 0, -0.999521, 23.2982, 0, -17.3795)
+transform = Transform3D(-0.999499, 0, -0.0293848, 0, 0.999954, 0, 0.0293842, 0, -0.99952, 23.2982, 0, -17.3795)
 progress = 3.80061
 
 [node name="Path3D2" type="Path3D" parent="Environment/Floor1/Enemies" index="1"]
@@ -575,14 +575,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 curve = SubResource("Curve3D_v6ha0")
 
 [node name="EnemyPath4" parent="Environment/Floor2/Enemies/Path3D" index="0" instance=ExtResource("6_iwr0g")]
-transform = Transform3D(0.999157, 0, 0.0407625, 0, 0.999991, 0, -0.0407625, 0, 0.999157, -1.9671, 0, -8.60691)
+transform = Transform3D(0.999156, 0, 0.0407625, 0, 0.999991, 0, -0.0407625, 0, 0.999156, -1.9671, 0, -8.60691)
 progress = 143.943
 
 [node name="Path3D2" type="Path3D" parent="Environment/Floor2/Enemies" index="1"]
 curve = SubResource("Curve3D_gmpev")
 
 [node name="EnemyPath5" parent="Environment/Floor2/Enemies/Path3D2" index="0" instance=ExtResource("6_iwr0g")]
-transform = Transform3D(0.99885, 7.84463e-06, -0.0475649, -7.85351e-06, 0.999983, -2.84211e-14, 0.047565, 3.73559e-07, 0.998848, -0.351224, 0, -21.4489)
+transform = Transform3D(0.998849, 7.84463e-06, -0.0475648, -7.8535e-06, 0.999983, -2.84211e-14, 0.0475649, 3.73559e-07, 0.998847, -0.351224, 0, -21.4489)
 progress = 104.49
 
 [node name="FocusAreas" type="Node3D" parent="Environment/Floor2" index="6"]

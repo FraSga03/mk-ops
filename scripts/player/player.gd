@@ -3,7 +3,7 @@ extends CharacterBody3D
 @export_group("Camera")
 @export_range(0.0, 1.0) var mouse_sensitivity = 0.25;
 
-@onready var main_character = %protagonist
+@onready var player_body: Node3D = %PlayerBody
 @onready var camera: Camera3D = %Camera
 @onready var camera_pivot: Node3D = %CameraPivot
 @onready var pointer: RayCast3D = %Pointer
@@ -51,25 +51,25 @@ var height_settings = {
 func _ready():
 	movement_map = {
 		Globals.MOVEMENT_TYPE.WALK: {
-			"idle": main_character.idle,
-			"right": main_character.walk_right,
-			"left": main_character.walk_left,
-			"forward": main_character.walk_forward,
-			"backward": main_character.walk_backward,
+			"idle": player_body.idle,
+			"right": player_body.walk_right,
+			"left": player_body.walk_left,
+			"forward": player_body.walk_forward,
+			"backward": player_body.walk_backward,
 		},
 		Globals.MOVEMENT_TYPE.CROUCH: {
-			"idle": main_character.crouch_idle,
-			"right": main_character.crouch_right,
-			"left": main_character.crouch_left,
-			"forward": main_character.crouch_forward,
-			"backward": main_character.crouch_backward,
+			"idle": player_body.crouch_idle,
+			"right": player_body.crouch_right,
+			"left": player_body.crouch_left,
+			"forward": player_body.crouch_forward,
+			"backward": player_body.crouch_backward,
 		},
 		Globals.MOVEMENT_TYPE.RUN: {
-			"idle": main_character.idle,
-			"right": main_character.run_right,
-			"left": main_character.run_left,
-			"forward": main_character.run_forward,
-			"backward": main_character.run_backward,
+			"idle": player_body.idle,
+			"right": player_body.run_right,
+			"left": player_body.run_left,
+			"forward": player_body.run_forward,
+			"backward": player_body.run_backward,
 		}
 	}
 
@@ -92,10 +92,10 @@ func _input(event: InputEvent) -> void:
 			movement_type = Globals.MOVEMENT_TYPE.CROUCH if movement_type == Globals.MOVEMENT_TYPE.WALK else Globals.MOVEMENT_TYPE.WALK;
 			if movement_type == Globals.MOVEMENT_TYPE.CROUCH:
 				set_posture(Globals.MOVEMENT_TYPE.CROUCH);
-				main_character.from_stand_to_crouch();
+				player_body.from_stand_to_crouch();
 			else:
 				set_posture(Globals.MOVEMENT_TYPE.WALK);
-				main_character.from_crouch_to_stand();
+				player_body.from_crouch_to_stand();
 		return;
 	
 	if event is InputEventMouseMotion:
@@ -150,7 +150,7 @@ func _physics_process(delta: float) -> void:
 	if move_direction.length() > 0.2:
 		last_movement = move_direction;
 	
-	main_character.rotation.y = camera_pivot.rotation.y;
+	player_body.rotation.y = camera_pivot.rotation.y;
 	
 	if raw_input != Vector2.ZERO && !step_audio_player.playing:
 		step_audio_player.play();

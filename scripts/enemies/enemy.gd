@@ -18,7 +18,6 @@ var tween = null;
 var detected_player = null;
 var is_inspecting = false;
 var is_stunned = false;
-var is_player_detected = false;
 var is_player_noticed = false;
 var previous_rotation = null;
 
@@ -35,20 +34,23 @@ func _physics_process(delta: float) -> void:
 	if detected_player != null:
 		player_pointer.look_at(detected_player.global_position + Vector3(0, 0.8, 0));
 
-		if player_pointer.is_colliding() and player_pointer.get_collider() is Node:	
+		if player_pointer.is_colliding() and player_pointer.get_collider() is Node and (not Globals.is_game_over):	
 			var node_collided = player_pointer.get_collider() as Node;
 			if node_collided.is_in_group("Player"):
 				step_audio_player.stop();
-				is_player_detected = true;
+				
 				on_detect_player();
 
 func on_detect_player():
 	show_exlamation_mark();
+	stop_and_remove_tween();
+	
 	enemy_body.aiming();
 	look_at(detected_player.global_position);
+	
 	on_player_detect.emit();
 
-func manage_hit(_force, delta):	
+func manage_hit(_force, _delta):	
 	if !stun_timer.is_stopped():
 		return;
 		
@@ -93,7 +95,7 @@ func _on_detection_area_body_entered(body: Node3D) -> void:
 	tween_detection.tween_property(
 		self,
 		"global_rotation:y",
-		target_yaw,
+		shortest_yaw,
 		2.0
 	)
 	await tween_detection.finished;
@@ -139,7 +141,7 @@ func stop_and_remove_tween():
 	tween = null;
 
 func is_enemy_stopped():
-	return is_inspecting or is_player_detected or is_stunned or is_player_noticed;
+	return is_inspecting or Globals.is_game_over or is_stunned or is_player_noticed;
 
 func _on_detection_timer_timeout() -> void:	
 	var tween_detection = create_tween();

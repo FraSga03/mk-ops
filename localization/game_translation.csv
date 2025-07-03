@@ -17,6 +17,7 @@ pause,-- PAUSE --,-- PAUSA--
 resume,RESUME,RIPRENDI
 forward,FORWARD,AVANTI
 backward,BACKWARD,INDIETRO
+try_again,TRY AGAIN,RIPROVA
 right,RIGHT,DESTRA
 left,LEFT,SINISTRA
 run,RUN,CORRI
@@ -28,6 +29,7 @@ scan,SCAN,SCANSIONA
 radio,RADIO,RADIO
 pause_c,PAUSE,PAUSA
 no_time,No time,Nessun tempo
+major,Major O,Major O
 1_1K_1,"According to our information, there's an elevator that will take you to the second floor.",Secondo le nostre informazioni c'è un ascensore che ti porterà al secondo piano
 1_1K_2,"The elevator will surely be guarded by terrorists, don't get spotted!","L'ascensore sarà sicuramente protetto dai terroristi, non farti scoprire!"
 1_1K_3,We absolutely need to reach the center of the laboratory.,Dobbiamo assolutamente raggiungere il centro del laboratorio
