@@ -7,6 +7,7 @@ extends Level
 @onready var enemy_path_4: PathFollow3D = $Environment/RoomD/Enemies/Path3D/EnemyPath
 @onready var exit_area_control: Area3D = $Environment/RoomD/ExitAreaControl
 @onready var progress_bar: CSGBox3D = $Environment/RoomD/ExitAreaControl/ProgressBar
+@onready var immovable_exit_door: StaticBody3D = $Environment/RoomD/Environment/ImmovableExitDoor
 
 var dialogues = {
 	"init": {
@@ -126,6 +127,8 @@ func _on_area_f1d_entered(_body: Node3D) -> void:
 func update_progress_bar_color(body: Node3D) -> void:
 	var bodies = get_bodies_in_control_area();
 	
+	immovable_exit_door.is_door_disabled = true;
+	
 	if bodies.size() == 0:
 		progress_bar.material.albedo_color= Color.RED;
 	elif bodies.size() == 1:
@@ -134,6 +137,7 @@ func update_progress_bar_color(body: Node3D) -> void:
 		progress_bar.material.albedo_color= Color.ORANGE;
 	elif bodies.size() == 3:
 		progress_bar.material.albedo_color= Color.GREEN
+		immovable_exit_door.is_door_disabled = false;
 
 func get_bodies_in_control_area():
 	var bodies = exit_area_control.get_overlapping_bodies();

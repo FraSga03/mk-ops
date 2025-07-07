@@ -123,6 +123,27 @@ theme_override_font_sizes/font_size = 75
 text = "MK-OPS"
 vertical_alignment = 1
 
+[node name="Developer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -545.0
+offset_top = -107.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 10
+
+[node name="DeveloperLabel" type="Label" parent="Developer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "sviluppato da"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_1g8jr")
 volume_db = -5.0
@@ -134,3 +155,4 @@ autoplay = true
 [connection signal="pressed" from="Buttons/VBoxContainer/LangButton" to="." method="_on_lang_button_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="gui_input" from="Title" to="." method="_on_title_gui_input"]
+[connection signal="gui_input" from="Developer" to="." method="_on_title_gui_input"]

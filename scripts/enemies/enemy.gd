@@ -9,6 +9,7 @@ extends CharacterBody3D
 @onready var detection_timer: Timer = $DetectionTimer
 @onready var hit_sound_player: AudioStreamPlayer3D = $HitSoundPlayer
 @onready var step_audio_player: AudioStreamPlayer3D = $StepAudioPlayer
+@onready var alert_sound_player: AudioStreamPlayer3D = $AlertSoundPlayer
 
 signal on_enemy_death;
 signal on_player_detect;
@@ -44,6 +45,7 @@ func _physics_process(delta: float) -> void:
 func on_detect_player():
 	show_exlamation_mark();
 	stop_and_remove_tween();
+	alert_sound_player.play();
 	
 	enemy_body.aiming();
 	look_at(detected_player.global_position);
@@ -60,9 +62,7 @@ func manage_hit(_force, _delta):
 	enemy_body.idle();
 	stun_animation(true);
 	
-	if tween != null:
-		tween.stop();
-		tween = null;
+	stop_and_remove_tween();
 
 func stun_animation(val):
 	particles.visible = true;

@@ -6,6 +6,7 @@ extends Control
 @onready var record_button: Button = $Buttons/VBoxContainer/RecordButton
 @onready var lang_button: Button = $Buttons/VBoxContainer/LangButton
 @onready var exit_button: Button = $Buttons/VBoxContainer/ExitButton
+@onready var developer_label: Label = $Developer/DeveloperLabel
 
 var options = preload("res://scenes/ui/commands.tscn");
 var records = preload("res://scenes/ui/records.tscn");
@@ -42,6 +43,7 @@ func update_labels():
 	record_button.text = tr("records");
 	lang_button.text = tr("language");
 	exit_button.text = tr("exit");
+	developer_label.text = tr("developer");
 
 func _on_play_button_pressed() -> void:
 	get_tree().get_root().add_child(levels.instantiate());

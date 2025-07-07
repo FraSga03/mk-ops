@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dtufecsq0clpx"]
+[gd_scene load_steps=15 format=3 uid="uid://dtufecsq0clpx"]
 
 [ext_resource type="Script" uid="uid://dqe5gs0i1wxog" path="res://scripts/enemies/enemy.gd" id="1_6xk8f"]
 [ext_resource type="PackedScene" uid="uid://d34ymsmbahx60" path="res://scenes/enemies/enemy_body.tscn" id="2_8e3ao"]
 [ext_resource type="AudioStream" uid="uid://diks3k0yon84d" path="res://assets/musics/stepfoot.mp3" id="3_38ino"]
 [ext_resource type="AudioStream" uid="uid://ckv825jly6f2g" path="res://assets/musics/enemy_hit.mp3" id="4_fcftc"]
+[ext_resource type="AudioStream" uid="uid://thgso1dfurxg" path="res://assets/musics/alert_sound.wav" id="5_lu5c6"]
 
 [sub_resource type="Animation" id="Animation_38ino"]
 length = 0.001
@@ -181,6 +182,11 @@ stream = ExtResource("4_fcftc")
 volume_db = -35.0
 pitch_scale = 2.0
 max_distance = 8.0
+
+[node name="AlertSoundPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_lu5c6")
+volume_db = -15.0
+max_distance = 10.0
 
 [connection signal="body_entered" from="GameOverArea" to="." method="_on_game_over_area_body_entered"]
 [connection signal="body_exited" from="GameOverArea" to="." method="_on_game_over_area_body_exited"]

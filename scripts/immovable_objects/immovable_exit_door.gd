@@ -4,6 +4,10 @@ extends StaticBody3D
 
 signal on_door_entered;
 
+var is_door_disabled = false;
+
 func _on_area_3d_body_entered(_body: Node3D) -> void:
-	door_sound_player.play();
+	if !is_door_disabled:
+		door_sound_player.play();
+	
 	on_door_entered.emit();
