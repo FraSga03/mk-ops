@@ -47,6 +47,7 @@ func _game_over(e):
 	Transition.change_scene("res://scenes/ui/game_over.tscn")
 
 func _ready() -> void:
+	Globals.stamina = Globals.MAX_STAMINA;
 	Globals.is_game_over = false;
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
 	Globals.on_resume.connect(resume_game);
@@ -58,9 +59,10 @@ func _ready() -> void:
 		enemy.on_player_detect.connect(_game_over.bind(enemy))
 		
 	dialogue_key = "init";
-	Globals.time_pivot = Time.get_unix_time_from_system()
 	
 	call_deferred("open_radio")
+	
+	Globals.time_pivot = Time.get_unix_time_from_system()
 	game_ui.show_level_label(level_name)
 
 func set_enemy_path():

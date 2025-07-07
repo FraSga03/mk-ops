@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cb5xl5crf25by"]
+[gd_scene load_steps=36 format=3 uid="uid://cb5xl5crf25by"]
 
 [ext_resource type="PackedScene" uid="uid://bpdr8pcpp5qg" path="res://scenes/levels/level.tscn" id="1_fiq81"]
 [ext_resource type="Script" uid="uid://bpdwui6f0x6v7" path="res://scripts/levels/level_2.gd" id="2_gw1l3"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bok7kyhc6bsha" path="res://scenes/enemies/movable_enemy.tscn" id="13_p4se4"]
 [ext_resource type="PackedScene" uid="uid://cuh8gy68w3gvu" path="res://scenes/movable_objects/movable_distributor.tscn" id="13_sibr7"]
 [ext_resource type="PackedScene" uid="uid://xn8arne2q2vs" path="res://scenes/movable_objects/movable_can.tscn" id="14_ndlae"]
+[ext_resource type="PackedScene" uid="uid://cnxyqt3h0v03i" path="res://scenes/movable_objects/pc.tscn" id="17_5niy6"]
 [ext_resource type="PackedScene" uid="uid://bmdhwd0ji245g" path="res://scenes/immovable_objects/immovable_exit_door.tscn" id="17_v8d84"]
 [ext_resource type="Texture2D" uid="uid://bmov4vi848bib" path="res://assets/textures/Orange/closed_area.jpg" id="21_lkn2k"]
 [ext_resource type="PackedScene" uid="uid://br3igf0e2hnpq" path="res://scenes/movable_objects/movable_cone.tscn" id="21_sbygb"]
@@ -123,10 +124,10 @@ transform = Transform3D(0.2, 0, 2.98023e-08, 0, 1, 0, -5.96046e-09, 0, 1, -5, 0,
 transform = Transform3D(0.2, 0, 2.98023e-08, 0, 1, 0, -5.96046e-09, 0, 1, 20, 0, 0)
 
 [node name="LongWall6" parent="Environment/RoomA/Walls" index="6" instance=ExtResource("3_qpwj6")]
-transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -25)
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, -25)
 
 [node name="LongWall7" parent="Environment/RoomA/Walls" index="7" instance=ExtResource("3_qpwj6")]
-transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -25)
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, -25)
 
 [node name="LongWall3" parent="Environment/RoomA/Walls" index="8" instance=ExtResource("3_qpwj6")]
 transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, -25, 0, 0)
@@ -279,52 +280,49 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.35243, 0)
 [node name="ImmovableLight2" parent="Environment/RoomA/Lights" index="0" instance=ExtResource("11_ndlae")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12, 0.9, -18.4562)
 
-[node name="ImmovableLight6" parent="Environment/RoomA/Lights" index="1" instance=ExtResource("11_ndlae")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, 12)
-
-[node name="ImmovableLight5" parent="Environment/RoomA/Lights" index="2" instance=ExtResource("11_ndlae")]
+[node name="ImmovableLight5" parent="Environment/RoomA/Lights" index="1" instance=ExtResource("11_ndlae")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16, 0.9, -12.4562)
 
-[node name="ImmovableLight7" parent="Environment/RoomA/Lights" index="3" instance=ExtResource("11_ndlae")]
+[node name="ImmovableLight7" parent="Environment/RoomA/Lights" index="2" instance=ExtResource("11_ndlae")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0.9, -12.4562)
 
-[node name="ImmovableLight11" parent="Environment/RoomA/Lights" index="4" instance=ExtResource("11_ndlae")]
+[node name="ImmovableLight11" parent="Environment/RoomA/Lights" index="3" instance=ExtResource("11_ndlae")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0.9, -12.4562)
 
-[node name="ImmovableLight10" parent="Environment/RoomA/Lights" index="5" instance=ExtResource("11_ndlae")]
+[node name="ImmovableLight10" parent="Environment/RoomA/Lights" index="4" instance=ExtResource("11_ndlae")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0.9, -37.4562)
 
-[node name="ImmovableLight12" parent="Environment/RoomA/Lights" index="6" instance=ExtResource("11_ndlae")]
+[node name="ImmovableLight12" parent="Environment/RoomA/Lights" index="5" instance=ExtResource("11_ndlae")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14, 0.9, -37.4562)
 
-[node name="ImmovableLight13" parent="Environment/RoomA/Lights" index="7" instance=ExtResource("11_ndlae")]
+[node name="ImmovableLight13" parent="Environment/RoomA/Lights" index="6" instance=ExtResource("11_ndlae")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.9, -62.4562)
 
-[node name="ImmovableLight14" parent="Environment/RoomA/Lights" index="8" instance=ExtResource("11_ndlae")]
+[node name="ImmovableLight14" parent="Environment/RoomA/Lights" index="7" instance=ExtResource("11_ndlae")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 37, 0.9, -62.4562)
 
-[node name="ImmovableLight16" parent="Environment/RoomA/Lights" index="9" instance=ExtResource("11_ndlae")]
+[node name="ImmovableLight16" parent="Environment/RoomA/Lights" index="8" instance=ExtResource("11_ndlae")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 76, 0.9, -62.4562)
 
-[node name="ImmovableLight17" parent="Environment/RoomA/Lights" index="10" instance=ExtResource("11_ndlae")]
+[node name="ImmovableLight17" parent="Environment/RoomA/Lights" index="9" instance=ExtResource("11_ndlae")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 76, 0.9, -36.4562)
 
-[node name="ImmovableLight18" parent="Environment/RoomA/Lights" index="11" instance=ExtResource("11_ndlae")]
+[node name="ImmovableLight18" parent="Environment/RoomA/Lights" index="10" instance=ExtResource("11_ndlae")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 101, 0.9, -31.4562)
 
-[node name="ImmovableLight19" parent="Environment/RoomA/Lights" index="12" instance=ExtResource("11_ndlae")]
+[node name="ImmovableLight19" parent="Environment/RoomA/Lights" index="11" instance=ExtResource("11_ndlae")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 110, 0.9, -57.4562)
 
-[node name="ImmovableLight15" parent="Environment/RoomA/Lights" index="13" instance=ExtResource("11_ndlae")]
+[node name="ImmovableLight15" parent="Environment/RoomA/Lights" index="12" instance=ExtResource("11_ndlae")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 37, 0.9, -37.4562)
 
-[node name="ImmovableLight9" parent="Environment/RoomA/Lights" index="14" instance=ExtResource("11_ndlae")]
+[node name="ImmovableLight9" parent="Environment/RoomA/Lights" index="13" instance=ExtResource("11_ndlae")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0.9, 17.5438)
 
-[node name="ImmovableLight8" parent="Environment/RoomA/Lights" index="15" instance=ExtResource("11_ndlae")]
+[node name="ImmovableLight8" parent="Environment/RoomA/Lights" index="14" instance=ExtResource("11_ndlae")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 0.9, 6.5438)
 
-[node name="ImmovableLight3" parent="Environment/RoomA/Lights" index="16" instance=ExtResource("11_ndlae")]
+[node name="ImmovableLight3" parent="Environment/RoomA/Lights" index="15" instance=ExtResource("11_ndlae")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19, 0.9, 12)
 
 [node name="Enemies" type="Node3D" parent="Environment/RoomA" index="5"]
@@ -465,50 +463,41 @@ transform = Transform3D(0.946576, 0, 0.322481, 0, 1, 0, -0.322481, 0, 0.946576, 
 [node name="MovableBox4" parent="Environment/RoomB/MovableObjects" index="1" instance=ExtResource("10_tv7cl")]
 transform = Transform3D(0.999587, 0, 0.0287242, 0, 1, 0, -0.0287242, 0, 0.999587, 19.3167, 0.9, 15.3731)
 
-[node name="MovableBox7" parent="Environment/RoomB/MovableObjects" index="2" instance=ExtResource("10_tv7cl")]
-transform = Transform3D(0.999587, 0, 0.0287242, 0, 1, 0, -0.0287242, 0, 0.999587, 5.31667, 0.9, 15.3731)
-
-[node name="MovableBox8" parent="Environment/RoomB/MovableObjects" index="3" instance=ExtResource("10_tv7cl")]
+[node name="MovableBox8" parent="Environment/RoomB/MovableObjects" index="2" instance=ExtResource("10_tv7cl")]
 transform = Transform3D(0.993558, 0, -0.113325, 0, 1, 0, 0.113325, 0, 0.993558, 5.40764, 0.9, 19.0967)
 
-[node name="MovableBox9" parent="Environment/RoomB/MovableObjects" index="4" instance=ExtResource("10_tv7cl")]
+[node name="MovableBox9" parent="Environment/RoomB/MovableObjects" index="3" instance=ExtResource("10_tv7cl")]
 transform = Transform3D(0.993558, 0, -0.113325, 0, 1, 0, 0.113325, 0, 0.993558, 23.2257, 0.9, 21.6494)
 
-[node name="MovableBox5" parent="Environment/RoomB/MovableObjects" index="5" instance=ExtResource("10_tv7cl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.147, 0.9, 10.5623)
-
-[node name="MovableBox10" parent="Environment/RoomB/MovableObjects" index="6" instance=ExtResource("10_tv7cl")]
+[node name="MovableBox10" parent="Environment/RoomB/MovableObjects" index="4" instance=ExtResource("10_tv7cl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65414, 0.9, 1.56225)
 
-[node name="MovableBox11" parent="Environment/RoomB/MovableObjects" index="7" instance=ExtResource("10_tv7cl")]
+[node name="MovableBox11" parent="Environment/RoomB/MovableObjects" index="5" instance=ExtResource("10_tv7cl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.65414, 0.9, 1.56225)
 
-[node name="MovableBox12" parent="Environment/RoomB/MovableObjects" index="8" instance=ExtResource("10_tv7cl")]
+[node name="MovableBox12" parent="Environment/RoomB/MovableObjects" index="6" instance=ExtResource("10_tv7cl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.65414, 0.9, 1.62428)
 
-[node name="MovableBox6" parent="Environment/RoomB/MovableObjects" index="9" instance=ExtResource("10_tv7cl")]
+[node name="MovableBox6" parent="Environment/RoomB/MovableObjects" index="7" instance=ExtResource("10_tv7cl")]
 transform = Transform3D(0.644017, 0, 0.765011, 0, 1, 0, -0.765011, 0, 0.644017, 18.8581, 0.9, 6.38162)
 
-[node name="MovableChair" parent="Environment/RoomB/MovableObjects" index="10" instance=ExtResource("6_qpwj6")]
+[node name="MovableChair" parent="Environment/RoomB/MovableObjects" index="8" instance=ExtResource("6_qpwj6")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -14, 1.3, -9)
 
-[node name="MovableChair2" parent="Environment/RoomB/MovableObjects" index="11" instance=ExtResource("6_qpwj6")]
+[node name="MovableChair2" parent="Environment/RoomB/MovableObjects" index="9" instance=ExtResource("6_qpwj6")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9, 1.3, -9)
 
-[node name="MovableChair3" parent="Environment/RoomB/MovableObjects" index="12" instance=ExtResource("6_qpwj6")]
+[node name="MovableChair3" parent="Environment/RoomB/MovableObjects" index="10" instance=ExtResource("6_qpwj6")]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -9, 1.3, -16)
 
-[node name="MovableObject" parent="Environment/RoomB/MovableObjects" index="13" instance=ExtResource("13_1yj8c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.743, 2, -11.342)
-
-[node name="MovableObject2" parent="Environment/RoomB/MovableObjects" index="14" instance=ExtResource("13_1yj8c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.743, 2, -11.342)
-
-[node name="MovableObject3" parent="Environment/RoomB/MovableObjects" index="15" instance=ExtResource("13_1yj8c")]
+[node name="MovableObject3" parent="Environment/RoomB/MovableObjects" index="11" instance=ExtResource("13_1yj8c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.743, 2, -13.342)
 
-[node name="MovableObject4" parent="Environment/RoomB/MovableObjects" index="16" instance=ExtResource("13_1yj8c")]
+[node name="MovableObject4" parent="Environment/RoomB/MovableObjects" index="12" instance=ExtResource("13_1yj8c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.343, 2.1, -22.697)
+
+[node name="Pc" parent="Environment/RoomB/MovableObjects" index="13" instance=ExtResource("17_5niy6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 2.3, -11.382)
 
 [node name="Enemies" type="Node3D" parent="Environment/RoomB" index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -613,13 +602,13 @@ transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926
 transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -18.255, 2, 18.307)
 
 [node name="ImmovableWardrobe5" parent="Environment/RoomC/Environment" index="17" instance=ExtResource("7_ibugp")]
-transform = Transform3D(0.677087, 0.0680568, 0.732749, 0.0482889, 0.98946, -0.13652, -0.734317, 0.12782, 0.666664, -15.2429, 2, 13.3718)
+transform = Transform3D(0.672965, 0, 0.739675, 0, 1, 0, -0.739675, 0, 0.672965, -15.2429, 2, 13.3718)
 
 [node name="ImmovableWardrobe6" parent="Environment/RoomC/Environment" index="18" instance=ExtResource("7_ibugp")]
-transform = Transform3D(-0.734317, 0.12782, 0.666664, 0.0482889, 0.98946, -0.13652, -0.677087, -0.0680568, -0.732749, -22.2429, 2, 9.37182)
+transform = Transform3D(-0.739631, 0, 0.673012, 0, 1, 0, -0.673012, 0, -0.739631, -22.2429, 2, 9.37182)
 
 [node name="ImmovableWardrobe7" parent="Environment/RoomC/Environment" index="19" instance=ExtResource("7_ibugp")]
-transform = Transform3D(0.463961, 0.09882, 0.880327, 0.0482889, 0.98946, -0.13652, -0.884539, 0.10585, 0.454298, -17.2429, 2, 3.79028)
+transform = Transform3D(0.458593, 0, 0.888647, 0, 1, 0, -0.888647, 0, 0.458592, -17.2429, 2, 3.79028)
 
 [node name="ImmovableWardrobe3" parent="Environment/RoomC/Environment" index="20" instance=ExtResource("7_ibugp")]
 transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -5.06413, 2, 13.307)
@@ -629,29 +618,23 @@ transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -5.06413
 [node name="MovableObject" parent="Environment/RoomC/MovableObjects" index="0" instance=ExtResource("13_1yj8c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.88687, 1.97899, 0.281956)
 
-[node name="MovableObject2" parent="Environment/RoomC/MovableObjects" index="1" instance=ExtResource("13_1yj8c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.35436, 1.97899, -0.30954)
-
-[node name="MovableObject4" parent="Environment/RoomC/MovableObjects" index="2" instance=ExtResource("13_1yj8c")]
+[node name="MovableObject4" parent="Environment/RoomC/MovableObjects" index="1" instance=ExtResource("13_1yj8c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3544, 1.97899, -0.30954)
 
-[node name="MovableObject3" parent="Environment/RoomC/MovableObjects" index="3" instance=ExtResource("13_1yj8c")]
+[node name="MovableObject3" parent="Environment/RoomC/MovableObjects" index="2" instance=ExtResource("13_1yj8c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8869, 1.97899, -0.558784)
 
-[node name="MovableObject5" parent="Environment/RoomC/MovableObjects" index="4" instance=ExtResource("14_ndlae")]
+[node name="MovableObject5" parent="Environment/RoomC/MovableObjects" index="3" instance=ExtResource("14_ndlae")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.83, 2, -23.554)
 
-[node name="MovableObject6" parent="Environment/RoomC/MovableObjects" index="5" instance=ExtResource("14_ndlae")]
+[node name="MovableObject6" parent="Environment/RoomC/MovableObjects" index="4" instance=ExtResource("14_ndlae")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.83, 2, -23.9551)
 
-[node name="MovableObject7" parent="Environment/RoomC/MovableObjects" index="6" instance=ExtResource("14_ndlae")]
+[node name="MovableObject7" parent="Environment/RoomC/MovableObjects" index="5" instance=ExtResource("14_ndlae")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.83, 2, -23.9551)
 
-[node name="MovableObject8" parent="Environment/RoomC/MovableObjects" index="7" instance=ExtResource("14_ndlae")]
+[node name="MovableObject8" parent="Environment/RoomC/MovableObjects" index="6" instance=ExtResource("14_ndlae")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.07224, 2, -23.2661)
-
-[node name="MovableObject9" parent="Environment/RoomC/MovableObjects" index="8" instance=ExtResource("14_ndlae")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.95483, 2, -23.8145)
 
 [node name="Enemies" type="Node3D" parent="Environment/RoomC" index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -761,52 +744,40 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.506
 
 [node name="MovableObjects" type="Node3D" parent="Environment/RoomD" index="3"]
 
-[node name="MovableBox" parent="Environment/RoomD/MovableObjects" index="0" instance=ExtResource("10_tv7cl")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.85532, 0.9, 11.0803)
-
-[node name="MovableBox5" parent="Environment/RoomD/MovableObjects" index="1" instance=ExtResource("10_tv7cl")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.85532, 0.9, 11.0803)
-
-[node name="MovableBox2" parent="Environment/RoomD/MovableObjects" index="2" instance=ExtResource("10_tv7cl")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.85532, 0.9, 11.0803)
-
-[node name="MovableBox3" parent="Environment/RoomD/MovableObjects" index="3" instance=ExtResource("10_tv7cl")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.85532, 0.9, 10.0803)
-
-[node name="MovableBox6" parent="Environment/RoomD/MovableObjects" index="4" instance=ExtResource("10_tv7cl")]
+[node name="MovableBox6" parent="Environment/RoomD/MovableObjects" index="0" instance=ExtResource("10_tv7cl")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.1447, 0.9, 23.0803)
 
-[node name="MovableBox7" parent="Environment/RoomD/MovableObjects" index="5" instance=ExtResource("10_tv7cl")]
+[node name="MovableBox7" parent="Environment/RoomD/MovableObjects" index="1" instance=ExtResource("10_tv7cl")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.1447, 0.9, 23.0803)
 
-[node name="MovableBox8" parent="Environment/RoomD/MovableObjects" index="6" instance=ExtResource("10_tv7cl")]
+[node name="MovableBox8" parent="Environment/RoomD/MovableObjects" index="2" instance=ExtResource("10_tv7cl")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.1447, 0.9, 23.0803)
 
-[node name="MovableBox9" parent="Environment/RoomD/MovableObjects" index="7" instance=ExtResource("10_tv7cl")]
+[node name="MovableBox9" parent="Environment/RoomD/MovableObjects" index="3" instance=ExtResource("10_tv7cl")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.1447, 0.9, 22.0803)
 
-[node name="MovableBox4" parent="Environment/RoomD/MovableObjects" index="8" instance=ExtResource("10_tv7cl")]
+[node name="MovableBox4" parent="Environment/RoomD/MovableObjects" index="4" instance=ExtResource("10_tv7cl")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.5341, 0.9, 10.0803)
 
-[node name="MovableChair" parent="Environment/RoomD/MovableObjects" index="9" instance=ExtResource("6_qpwj6")]
+[node name="MovableChair" parent="Environment/RoomD/MovableObjects" index="5" instance=ExtResource("6_qpwj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0.987385)
 
-[node name="MovableChair2" parent="Environment/RoomD/MovableObjects" index="10" instance=ExtResource("6_qpwj6")]
+[node name="MovableChair2" parent="Environment/RoomD/MovableObjects" index="6" instance=ExtResource("6_qpwj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1.3, 0.987385)
 
-[node name="MovableChair3" parent="Environment/RoomD/MovableObjects" index="11" instance=ExtResource("6_qpwj6")]
+[node name="MovableChair3" parent="Environment/RoomD/MovableObjects" index="7" instance=ExtResource("6_qpwj6")]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 7, 1.3, -4.01262)
 
-[node name="MovableChair4" parent="Environment/RoomD/MovableObjects" index="12" instance=ExtResource("6_qpwj6")]
+[node name="MovableChair4" parent="Environment/RoomD/MovableObjects" index="8" instance=ExtResource("6_qpwj6")]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 1, 1.3, -4.01262)
 
-[node name="MovableCone" parent="Environment/RoomD/MovableObjects" index="13" instance=ExtResource("21_sbygb")]
+[node name="MovableCone" parent="Environment/RoomD/MovableObjects" index="9" instance=ExtResource("21_sbygb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.749, 1.5, -19.14)
 
-[node name="MovableCone2" parent="Environment/RoomD/MovableObjects" index="14" instance=ExtResource("21_sbygb")]
+[node name="MovableCone2" parent="Environment/RoomD/MovableObjects" index="10" instance=ExtResource("21_sbygb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.749, 1.5, -8.14)
 
-[node name="MovableCone3" parent="Environment/RoomD/MovableObjects" index="15" instance=ExtResource("21_sbygb")]
+[node name="MovableCone3" parent="Environment/RoomD/MovableObjects" index="11" instance=ExtResource("21_sbygb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.251, 1.5, 6.86)
 
 [node name="Enemies" type="Node3D" parent="Environment/RoomD" index="4"]

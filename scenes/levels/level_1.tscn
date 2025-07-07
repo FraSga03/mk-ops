@@ -582,7 +582,7 @@ progress = 143.943
 curve = SubResource("Curve3D_gmpev")
 
 [node name="EnemyPath5" parent="Environment/Floor2/Enemies/Path3D2" index="0" instance=ExtResource("6_iwr0g")]
-transform = Transform3D(0.998849, 7.84463e-06, -0.0475648, -7.8535e-06, 0.999983, -2.84211e-14, 0.0475649, 3.73559e-07, 0.998847, -0.351224, 0, -21.4489)
+transform = Transform3D(0.998849, 7.84463e-06, -0.0475648, -7.85351e-06, 0.999983, -2.84211e-14, 0.0475649, 3.73559e-07, 0.998847, -0.351224, 0, -21.4489)
 progress = 104.49
 
 [node name="FocusAreas" type="Node3D" parent="Environment/Floor2" index="6"]

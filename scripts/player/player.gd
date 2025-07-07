@@ -13,7 +13,6 @@ extends CharacterBody3D
 @onready var spring_arm_3d: SpringArm3D = $CameraPivot/SpringArm3D
 @onready var domain_animation: AnimationPlayer = $DomainAnimation
 @onready var step_audio_player: AudioStreamPlayer3D = $StepAudioPlayer
-@onready var scan_audio_player: AudioStreamPlayer3D = $ScanAudioPlayer
 @onready var energy_audio_player: AudioStreamPlayer3D = $EnergyAudioPlayer
 
 @export() var acceleration = 60;
@@ -153,7 +152,11 @@ func _physics_process(delta: float) -> void:
 	player_body.rotation.y = camera_pivot.rotation.y;
 	
 	if raw_input != Vector2.ZERO && !step_audio_player.playing:
-		step_audio_player.play();
+		if movement_type == Globals.MOVEMENT_TYPE.RUN:
+			step_audio_player.play();
+		else:
+			var timer = get_tree().create_timer(0.2);
+			timer.timeout.connect(step_audio_player.play);
 	
 	var lenght_sqared_input = raw_input.length_squared();
 	if lenght_sqared_input > 0 and lenght_sqared_input < 1:
