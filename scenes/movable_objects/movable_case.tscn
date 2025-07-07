@@ -3,25 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://ku16cxy8qd7l" path="res://scenes/movable_objects/movable_obj.tscn" id="1_ctw73"]
 [ext_resource type="Script" uid="uid://cfcp6jxco08le" path="res://scripts/movable_objects/movable_case.gd" id="2_4tury"]
 [ext_resource type="Texture2D" uid="uid://bqg1k22c6eutk" path="res://assets/textures/Dark/texture_09.png" id="2_fj6t3"]
-[ext_resource type="Shader" uid="uid://csom70drinrs8" path="res://scripts/movable_objects/movable_ampoule.gdshader" id="3_l0psj"]
+[ext_resource type="Shader" uid="uid://dmear5oe780e3" path="res://scenes/movable_objects/movable_obj.gdshader" id="4_4tury"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fj6t3"]
 size = Vector3(0.4, 1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4tury"]
 render_priority = 0
-shader = ExtResource("3_l0psj")
-shader_parameter/albedo = Color(1, 1, 1, 0)
-shader_parameter/roughness = 0.15
-shader_parameter/refraction = 0.5
-shader_parameter/refraction_texture_channel = Vector4(1, 0, 0, 0)
-shader_parameter/normal_strength = 0.0
-shader_parameter/edge_color = Color(0, 0, 0, 1)
-shader_parameter/surface_contribution = 0.2
-shader_parameter/specular_contribution = 0.2
-shader_parameter/refraction_contribution = 1.0
-shader_parameter/uv1_scale = Vector3(1, 1, 1)
-shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader = ExtResource("4_4tury")
+shader_parameter/effect_enabled = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l0psj"]
 resource_local_to_scene = true

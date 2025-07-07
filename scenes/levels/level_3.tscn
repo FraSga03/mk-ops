@@ -160,7 +160,7 @@ progress = 71.5404
 curve = SubResource("Curve3D_kdsi4")
 
 [node name="EnemyPath" parent="Environment/Floor1/Enemies/Path3D2" index="0" instance=ExtResource("18_5f5xw")]
-transform = Transform3D(-0.0842261, 0, -0.996441, 0, 1, 0, 0.996441, 0, -0.0842261, 1.13321, 0, 7.98056)
+transform = Transform3D(-0.084226, 0, -0.996441, 0, 1, 0, 0.996441, 0, -0.084226, 1.13321, 0, 7.98056)
 progress = 51.5278
 
 [node name="Environment" type="Node3D" parent="Environment/Floor1" index="4"]

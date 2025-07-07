@@ -33,7 +33,7 @@ major,Major O,Major O
 1_1K_1,"According to our information, there's an elevator that will take you to the second floor.",Secondo le nostre informazioni c'è un ascensore che ti porterà al secondo piano
 1_1K_2,"The elevator will surely be guarded by terrorists, don't get spotted!","L'ascensore sarà sicuramente protetto dai terroristi, non farti scoprire!"
 1_1K_3,We absolutely need to reach the center of the laboratory.,Dobbiamo assolutamente raggiungere il centro del laboratorio
-1_1K_4,"If you need to, use your powers, the objective is always to complete the mission.","Se hai bisogno strutta i tuoi poteri, l'obbiettivo è completare la missione."
+1_1K_4,"If you need to, use your powers, the objective is always to complete the mission.","Se ne hai bisogno strutta i tuoi poteri, l'obbiettivo è completare la missione."
 1_1A_1,"Remember: the mission is unofficial, you absolutely must not be discovered!","Ricorda: la missione non è ufficiale, non devi assolutamente farti scoprire!"
 1_1A_2,There should be some small objects around that you can use!,Ci dovrebbero essere dei piccoli oggetti che potresti utilizzare lì intorno!
 1_1A_3,"Even if it's not the best solution, you should attack the enemy before they spot you.",Anche se non è la miglior soluzione dovresti attaccare il nemico prima che ti scopra.
@@ -43,7 +43,7 @@ major,Major O,Major O
 1_1B_4,"Luckily, the terrorists aren't robots.",Per fortuna i terroristi non sono dei robot.
 1_1C_1,The elevator should be right in front of you!,L'ascensore dovrebbe essere davanti a te!
 1_1C_2,"You're almost there, don't give up now!","Ci sei quasi, non mollare proprio adesso!"
-1_1C_3,You should neutralize that guard if you're having trouble.,Dovresti neutralizzare quella guardia se hai problemi.
+1_1C_3,You should neutralize that guard if you're having trouble.,"Dovresti neutralizzare quella guardia, se ti dà problemi."
 1_1C_4,Find something nearby to take him down.,Trova qualcosa nelle vicinanze per neutralizzarlo.
 1_2A_1,"After this room, the storage areas should be next.",Dopo questa stanza dovrebbero esserci i magazzini
 1_2A_2,"Keep it up, and don't forget about the presence of guards.","Continua così, non dimenticarti della presenza delle guardie."
@@ -52,16 +52,16 @@ major,Major O,Major O
 1_2B_1,The exit should be nearby.,L'uscita dovrebbe essere lì vicino.
 1_2B_2,"You're almost there, don't give up!","Sei quasi arrivata, non mollare ora."
 1_INIT_1,"Can you hear me, R? Do you copy",Mi senti R? Mi ricevi?
-1_INIT_2,"Perfect. You've made it to the lab, your mission starts now. Let's go over the objective one last time: you’ve been chosen to infiltrate MK Corp’s laboratory. The facility has been taken over by terrorists.","Perfetto. Sei arrivata nel laboratorio, la tua missione inizia ora. Ricapitoliamo per l'ultima volta l'obbiettivo: sei stata scelta per infiltrarti nel laboratorio della MK Corp. Il laboratorio è stato occupato dai terroristi della OverHED,"
-1_INIT_3,They managed to eliminate the military personnel guarding the site and seize control. The OverHED terrorists’ target is the HED meteorite fragment stored in the heart of the lab.,sono riusciti ad eliminare i militari a guardia e a occuparlo. L'obbiettivo dei terroristi è il frammento del meteorite HED custodito nel cuore del laboratorio.
-1_INIT_4,"The public isn't aware of this location, so we can't risk attracting media attention by sending in the military. Also, the president wouldn’t be too happy about that.","L'opinione pubblica non è a conoscenza di questo sito, non possiamo pertanto attirare i media utilizzando l'esercito inoltre il presidente non sarebbe molto felice."
+1_INIT_2,"Perfect. You've made it to the lab, your mission starts now. Let's go over the objective one last time: you’ve been chosen to infiltrate MK Corp’s laboratory. The facility has been taken over by terrorists.","Perfetto. Sei arrivata al laboratorio, la tua missione inizia ora. Ricapitoliamo per l'ultima volta l'obiettivo: sei stata scelta per infiltrarti nel laboratorio della MK Corp, attualmente occupato dai terroristi della OverHED, "
+1_INIT_3,They managed to eliminate the military personnel guarding the site and seize control. The OverHED terrorists’ target is the HED meteorite fragment stored in the heart of the lab.,"sono riusciti a eliminare i militari di guardia e a occuparlo. L'obiettivo dei terroristi è il frammento del meteorite HED, custodito nel cuore del laboratorio."
+1_INIT_4,"The public isn't aware of this location, so we can't risk attracting media attention by sending in the military. Also, the president wouldn’t be too happy about that.","L'opinione pubblica non è a conoscenza di questo sito, non possiamo permetterci di attirare l'attenzione dei media o coinvolgere l'esercito, inoltre il presidente non ne sarebbe affattofelice."
 1_INIT_5,"Your task is to recover the fragment yourself. Afterward, we’ll ensure you have a safe way out.","Il tuo compito sarà recupare tu stessa il frammento, successivamente ti garantiremo una via di uscita sicura."
 1_INIT_6,"Don’t let the enemies spot you, use your powers if necessary.","Non farti scoprire dai nemici, usa i tuoi poteri se necessario."
 1_INIT_7,"One last thing. Since this is your first mission in a while, maybe we should go over your powers again?","Un'ultima cosa. Visto che è la tua prima missione dopo tanto, non dovremmo ripassare i tuoi poteri?"
 1_INIT_8,Use 'F' to scan the surrounding area for lifeforms or useful objects.,"Usa \""F\"" per scansionare l'area circostante in cerca di forme di vita o oggetti che potrebbero essere utili."
-1_INIT_9,"With the left mouse button, aim at a scanned object to pick it up. Hold and release the left button to throw it.","con il tasto sinistro del mouse punta un oggetto scansionato per raccoglierlo, tieni premuto il tasto sinistro e rilascialo per lanciare tale oggetto,"
+1_INIT_9,"With the left mouse button, aim at a scanned object to pick it up. Hold and release the left button to throw it.","con il tasto sinistro del mouse punta un oggetto scansionato per raccoglierlo, per lanciarlo tieni premuto il tasto sinistro e rilascialo,"
 1_INIT_10,You could even stun someone by hitting them. Remember to take advantage of blind spots in the environment by crouching with 'CTRL'.,"potresti addirittura stordire qualcuno colpendolo. Ricordati di sfruttare tutti i punti ciechi dell'ambiente accovacciandoti con \""CTRL\""."
-1_INIT_11,"You can contact me anytime via radio using the 'R' key, or take a break with the 'P' key.","Puoi contattarmi in qualsiasi momento con la radio attraverso il tasto \""R\"", oppure prenditi una pausa con il tasto \""P\""."
+1_INIT_11,"You can contact me anytime via radio using the 'ALT' key, or take a break with the 'P' key.","Puoi contattarmi in qualsiasi momento con la radio attraverso il tasto \""ALT\"", oppure prenditi una pausa con il tasto \""P\""."
 1_INIT_12,We're counting on you! Time is running out!,Contiamo su di te! Il tempo stringe!
 2_1K_1,This floor should be some sort of storage area.,Questo piano dovrebbe essere una sorta di magazzino.
 2_1K_2,"According to the map, the exit should be to the northeast",Secondo la planimetria l'uscita dovrebbe essere a nord est.
@@ -100,21 +100,21 @@ major,Major O,Major O
 3_3B_2,Stay focused and don’t get spotted!,Concentrati e non farti scoprire!
 3_3B_3,"The door is right in front of you, don’t waste time!","La porta è davanti a te, non perdere tempo!"
 intro_1,"Noveria, Theskar,","Noveria, Theskar"
-intro_2,"Following the fall of the meteorite HED near the city, which caused the deaths of numerous people,","A seguito della caduta del meteorite HED caduto nei pressi della città che ha causato la morte di numerose persone,"
-intro_3,a small portion of the survivors developed extraordinary physical and mental abilities.,una piccola porzione di sopravvissuti ha sviluppato delle capacità fische e mentali fuori dal comune.
-intro_4,"These mutations, highly unpredictable, have also emerged years after the event.","Tali mutazioni, altamente imprevedibili, sono emerse anche dopo alcuni anni dall'evento."
-intro_5,The government and TARS (Theskar Agency for Research and Science) continue to study how to manipulate,Il governo e l'agezia TARS (Theskar Agency for Research and Science) continuano a studiare un modo per manipolare 
-intro_6,the meteorite fragments in order to gain an advantage.,i frammenti di meteorite al fine di trarne un vantaggio.
+intro_2,"Following the fall of the meteorite HED near the city, which caused the deaths of numerous people,","In seguito alla caduta del meteorite HED nei pressi della città, che ha causato la morte di numerose persone,"
+intro_3,a small portion of the survivors developed extraordinary physical and mental abilities.,una piccola parte dei sopravvissuti ha sviluppato capacità fisiche e mentali fuori dal comune.
+intro_4,"These mutations, highly unpredictable, have also emerged years after the event.","Tali mutazioni, altamente imprevedibili, sono emerse anche a diversi anni di distanza dall’evento."
+intro_5,The government and TARS (Theskar Agency for Research and Science) continue to study how to manipulate,Il governo e l’agenzia TARS (Theskar Agency for Research and Science) continuano a studiare un modo per manipolare
+intro_6,the meteorite fragments in order to gain an advantage.,"i frammenti di meteorite, al fine di trarne un vantaggio."
 2_INIT_1,We managed to access the footage from the lab's perimeter.,"Siamo riusciti ad accedere ai filmati del perimetro del laboratorio,"
-2_INIT_2,"The terrorists moved quickly, neutralized the guards protecting the entrance, and made their way inside.",I terroristi si sono mossi velocemente e hanno neutralizzato le guardie che proteggevano l'entrata e sono entrati.
-2_INIT_3,"However, we've discovered a crucial detail: one of them threw a guard without touching him.","Abbiamo però scoperto un dettaglio di estrema importanza, uno di loro ha proiettato una guardia senza toccarla."
+2_INIT_2,"The terrorists moved quickly, neutralized the guards protecting the entrance, and made their way inside.","I terroristi si sono mossi velocemente, hanno neutralizzato le guardie che proteggevano l’entrata e sono penetrati all’interno."
+2_INIT_3,"However, we've discovered a crucial detail: one of them threw a guard without touching him.",Abbiamo però scoperto un dettaglio di estrema importanza: uno di loro ha proiettato una guardia senza toccarla.
 2_INIT_4,"We assume he has powers similar to yours. The situation is getting more complicated, ","Ipotizziamo che abbia poteri simili ai tuoi. La situazione si fa più complessa, "
-2_INIT_5,"if they’ve taken such a risk, they must be aware of the dangers and likely have an escape plan.",se hanno rischiato così tanto conoscono i loro rischi e avranno un piano di fuga.
+2_INIT_5,"if they’ve taken such a risk, they must be aware of the dangers and likely have an escape plan.",se hanno rischiato così tanto conoscono i loro limiti e avranno un piano di fuga.
 2_INIT_6,"Let’s not waste any more time. We’ll continue the investigation,  you proceed with the mission.","Non perdiamo troppo tempo, continueremo ad indagare, tu vai avanti con la missione."
 3_INIT_1,We have an update. The individual leading the OverHED expedition has contacted us.,Abbiamo degli aggiornamenti. L'individuo a capo della spedizione della OverHED ci ha contattati.
 3_INIT_2,"The terrorists have blackmailed the government, demanding the immediate cessation of meteorite research conducted by TARS.",I terroristi hanno ricattato il governo chiedendo la cessazione immediata delle ricerche sul meteorite da parte della TARS. 
 3_INIT_3,"If this does not happen within 4 hours, they will publish all the material they gathered during their incursion.",Se ciò non avverrà entro 4 ore pubblicheranno tutto il materiale a loro disposizione raccolto durante la loro incursione.
 3_INIT_4,Not even our division knows what is really going on inside the TARS laboratories.,Nemmeno la nostra sezione conosce ciò che avviene effettivamente nei laboratori della TARS.
-3_INIT_5,The government seems quite concerned and has no intention of giving in to the blackmail.,"Il governo sembra piuttosto preoccupato e non intende cedere al ricatto,"
-3_INIT_6,"If the mission is not completed in time, they are even willing to level the entire building.","se la missione non viene completata in tempo, sono disposti anche a radere al suolo l'intero edificio."
+3_INIT_5,The government seems quite concerned and has no intention of giving in to the blackmail.,"Il governo sembra piuttosto preoccupato ma non intende cedere al ricatto,"
+3_INIT_6,"If the mission is not completed in time, they are even willing to level the entire building.","se la missione non verrà completata in tempo, sono disposti anche a radere al suolo l'intero edificio."
 3_INIT_7,"We risk an escalation,  we must stop them immediately.","Rischiamo un'escalation, dobbiamo immediatamente fermarli."
